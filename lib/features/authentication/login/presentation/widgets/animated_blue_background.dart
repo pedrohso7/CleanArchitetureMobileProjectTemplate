@@ -12,30 +12,25 @@ class AnimatedBlueBackground extends StatelessWidget {
 
     return AnimatedContainer(
       curve: Curves.easeOutCubic,
-      height: startAnimation ? mq.size.height * 0.45 : 0,
+      height: startAnimation ? mq.size.height * 0.4 : 0,
       duration: const Duration(milliseconds: 800),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
           Container(
-            height: 543,
-            width: 543,
             decoration: const BoxDecoration(
               // color: context.theme.primaryColor,
               color: Colors.blue,
-              borderRadius: const BorderRadius.only(
+              borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(50),
                 bottomRight: Radius.circular(50),
               ),
             ),
           ),
-          Transform.translate(
-            offset: const Offset(0, 20.0),
-            child: Transform.scale(
-              scale: 0.6,
-              child: Image.asset(
-                'lib/assets/images/brain.png',
-              ),
+          Transform.scale(
+            scale: 0.7,
+            child: Image.asset(
+              'lib/assets/images/brain.png',
             ),
           ),
         ],
