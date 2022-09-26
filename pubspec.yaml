@@ -25,10 +25,10 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.5
-  cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.9
   flutter_localizations:
     sdk: flutter
+  material_design_icons_flutter: ^5.0.6996
   
 dev_dependencies:
   flutter_test:

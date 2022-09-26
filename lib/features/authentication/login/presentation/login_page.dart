@@ -10,7 +10,7 @@ class LoginPage extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: const Color.fromARGB(255, 226, 224, 224),
       body: SingleChildScrollView(
         controller: controller.scrollController,
         child: Stack(
@@ -18,12 +18,14 @@ class LoginPage extends GetView<LoginController> {
           children: [
             Obx(() {
               return AnimatedBlueBackground(
-                  startAnimation: controller.showBlueBackground.value);
+                startAnimation: controller.showBlueBackground.value,
+              );
             }),
             Obx(
               () {
                 return LoginPageView(
-                    startAnimation: controller.showModalPage.value);
+                  startAnimation: controller.showModalPage.value,
+                );
               },
             ),
           ],
