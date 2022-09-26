@@ -1,9 +1,6 @@
 import 'package:answer_me_app/features/authentication/login/presentation/login_controller.dart';
-import 'package:answer_me_app/shared/widgets/default_button.dart';
-import 'package:answer_me_app/shared/widgets/default_text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class LoginPageView extends GetView<LoginController> {
   final bool startAnimation;
@@ -19,19 +16,17 @@ class LoginPageView extends GetView<LoginController> {
       scale: controller.showModalPage.value ? 1.0 : 0.0,
       duration: const Duration(milliseconds: 1000),
       child: SizedBox(
-        height: mq.size.height + 200,
+        height: mq.size.height + 100,
         width: mq.size.width,
         child: Column(
           children: [
-            const SizedBox(height: 220),
+            const SizedBox(height: 360),
             Container(
-              height: 380,
-              width: mq.size.width,
-              margin: const EdgeInsets.symmetric(horizontal: 40),
+              margin: const EdgeInsets.symmetric(horizontal: 60),
               padding: const EdgeInsets.only(
-                right: 40,
-                left: 40,
-                top: 25,
+                left: 60,
+                right: 60,
+                top: 60,
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -48,93 +43,96 @@ class LoginPageView extends GetView<LoginController> {
                         fontSize: 34,
                         fontWeight: FontWeight.bold,
                       ),
+                      textScaleFactor: 1,
                     ),
                     const SizedBox(height: 33),
-                    DefaultTextInput(
-                      contentPadding: const EdgeInsets.symmetric(vertical: 10),
-                      textCapitalization: TextCapitalization.none,
-                      textInputAction: TextInputAction.next,
-                      borderColor: Colors.transparent,
-                      icon: const Icon(
-                        MdiIcons.email,
-                        color: Colors.grey,
-                        size: 25,
-                      ),
-                      label: const Text(
-                        'Email',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textScaleFactor: 1,
-                      ),
-                      controller: controller.emailEC,
-                      // validator: Validatorless.multiple([
-                      //   Validatorless.required('Campo obrigatório.'),
-                      //   Validatorless.email('E-mail inválido.'),
-                      // ]),
-                      keyboardType: TextInputType.emailAddress,
-                    ),
+                    // TechfleetTextformfield(
+                    //   contentPadding: EdgeInsets.symmetric(
+                    //       vertical: 10,
+                    //   textCapitalization: TextCapitalization.none,
+                    //   textInputAction: TextInputAction.next,
+                    //   fillColor: Colors.grey,
+                    //   borderColor: Colors.transparent,
+                    //   icon: const Icon(
+                    //     MdiIcons.email,
+                    //     color: ColorsConstants.COLOR_GREY,
+                    //     size: 25,
+                    //   ),
+                    //   label: const Text(
+                    //     'Email',
+                    //     style: TextStyle(
+                    //       color: ColorsConstants.COLOR_GREY,
+                    //       fontSize: 16,
+                    //       fontWeight: FontWeight.bold,
+                    //     ),
+                    //     textScaleFactor: 1,
+                    //   ),
+                    //   controller: controller.emailEC,
+                    //   validator: Validatorless.multiple([
+                    //     Validatorless.required('Campo obrigatório.'),
+                    //     Validatorless.email('E-mail inválido.'),
+                    //   ]),
+                    //   keyboardType: TextInputType.emailAddress,
+                    // ),
                     const SizedBox(height: 25),
-                    Obx(() {
-                      return DefaultTextInput(
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 10,
-                        ),
-                        textCapitalization: TextCapitalization.none,
-                        icon: const Icon(
-                          MdiIcons.lock,
-                          color: Colors.grey,
-                          size: 25,
-                        ),
-                        label: const Text(
-                          'Senha',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textScaleFactor: 1,
-                        ),
-                        controller: controller.passwordEC,
-                        // validator: Validatorless.required('Campo obrigatório.'),
-                        suffixWidget: IconButton(
-                          splashColor: Colors.transparent,
-                          onPressed: () => controller.isPasswordVisible.value =
-                              !controller.isPasswordVisible.value,
-                          icon: controller.isPasswordVisible.value
-                              ? const Icon(
-                                  MdiIcons.eye,
-                                  color: Colors.grey,
-                                  size: 25,
-                                )
-                              : const Icon(
-                                  MdiIcons.eyeOff,
-                                  color: Colors.grey,
-                                  size: 25,
-                                ),
-                        ),
-                        obscureText: !(controller.isPasswordVisible.value),
-                      );
-                    }),
+                    // Obx(() {
+                    //   return TechfleetTextformfield(
+                    //     contentPadding: EdgeInsets.symmetric(
+                    //         vertical: 10),
+                    //     textCapitalization: TextCapitalization.none,
+                    //     fillColor: ColorsConstants.COLOR_LIGHT_GREY,
+                    //     borderColor: Colors.transparent,
+                    //     icon: const Icon(
+                    //       MdiIcons.lock,
+                    //       color: ColorsConstants.COLOR_GREY,
+                    //       size: 25,
+                    //     ),
+                    //     label: const Text(
+                    //       'Senha',
+                    //       style: TextStyle(
+                    //         color: ColorsConstants.COLOR_GREY,
+                    //         fontSize: 16,
+                    //         fontWeight: FontWeight.bold,
+                    //       ),
+                    //       textScaleFactor: 1,
+                    //     ),
+                    //     controller: controller.passwordEC,
+                    //     validator: Validatorless.required('Campo obrigatório.'),
+                    //     suffixWidget: IconButton(
+                    //       splashColor: Colors.transparent,
+                    //       onPressed: () => controller.isPasswordVisible.value =
+                    //           !controller.isPasswordVisible.value,
+                    //       icon: controller.isPasswordVisible.value
+                    //           ? const Icon(
+                    //               MdiIcons.eye,
+                    //               color: ColorsConstants.COLOR_GREY,
+                    //               size: 25,
+                    //             )
+                    //           : const Icon(
+                    //               MdiIcons.eyeOff,
+                    //               color: ColorsConstants.COLOR_GREY,
+                    //               size: 25,
+                    //             ),
+                    //     ),
+                    //     obscureText: !(controller.isPasswordVisible.value),
+                    //   );
+                    // }),
                     const SizedBox(height: 35),
-                    DefaultButton(
-                      fontSize: 16,
-                      borderRadius: 32,
-                      label: 'Entrar',
-                      onPressed: () {
-                        FocusScope.of(context).unfocus();
-                        if (controller.loginGK.currentState?.validate() ??
-                            false) {
-                          controller.login(
-                            email: controller.emailEC.text,
-                            password: controller.passwordEC.text,
-                          );
-                        }
-                      },
-                      width: mq.size.width,
-                    ),
+                    // TechfleetButton(
+                    //   fontSize: 16,
+                    //   borderRadius: 32,
+                    //   label: 'Entrar',
+                    //   onPressed: () {
+                    //     FocusScope.of(context).unfocus();
+                    //     if (controller.loginGK.currentState?.validate() ?? false) {
+                    //       controller.login(
+                    //         email: controller.emailEC.text,
+                    //         password: controller.passwordEC.text,
+                    //       );
+                    //     }
+                    //   },
+                    //   width: SizeUtils.screenWidth,
+                    // ),
                     const SizedBox(height: 15),
                     TextButton(
                       onPressed: () => {
