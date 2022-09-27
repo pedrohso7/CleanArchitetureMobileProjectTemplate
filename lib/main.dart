@@ -1,10 +1,10 @@
-import 'package:answer_me_app/features/authentication/login/presentation/login_page.dart';
 import 'package:answer_me_app/shared/bindings/app_bindings.dart';
 import 'package:answer_me_app/shared/routes/auth_routes.dart';
+import 'package:answer_me_app/shared/routes/splash_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'shared/themes/default_theme.dart';
 
@@ -12,12 +12,14 @@ void main() async {
   await Future.delayed(const Duration(milliseconds: 5000), () {
     debugPrint('teste');
   });
-  FlutterNativeSplash.remove();
-  runApp(const MyApp());
+
+  await GetStorage.init();
+
+  runApp(const AnswerMeApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class AnswerMeApp extends StatelessWidget {
+  const AnswerMeApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: DefaultTheme.theme,
       initialBinding: AppBindings(),
-      initialRoute: '/auth/login',
+      initialRoute: '/splash',
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
       ],
       getPages: [
         ...AuthRoutes.routers,
+        ...SplashRoutes.routers,
       ],
     );
   }

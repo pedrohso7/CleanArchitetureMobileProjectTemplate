@@ -4,6 +4,7 @@ import 'package:answer_me_app/shared/mixins/loading_mixin.dart';
 import 'package:answer_me_app/shared/mixins/message_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class LoginController extends GetxController with LoaderMixin, MessageMixin {
   //Tela de login
@@ -45,15 +46,17 @@ class LoginController extends GetxController with LoaderMixin, MessageMixin {
   Future<void> login({required String email, required String password}) async {
     try {
       loading.toggle();
-      final userLogged =
+
+      final Response response =
           await _userRepository.login(email: email, password: password);
 
-      // final storage = GetStorage();
+      final GetStorage storage = GetStorage();
+      storage.write('user', response.body['usr'].toJson());
+      storage.write('token', response.body['token']);
 
-      // storage.write(AuthConstants.USER_KEY, userLogged.toJson());
-      // storage.write(AuthConstants.USER_ACCESS_TOKEN, userLogged.accesstoken);
-      debugPrint(userLogged);
       loading.toggle();
+
+      await Get.toNamed('/home');
     } on RestClientException catch (e, s) {
       loading.toggle();
       message(MessageModel(
