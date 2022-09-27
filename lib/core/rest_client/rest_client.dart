@@ -1,7 +1,7 @@
 import 'package:get/get_connect/connect.dart';
 
-class GetClient extends GetConnect {
-  Future getFromUrl(String url) {
-    return get(url);
+class RestClient extends GetConnect {
+  RestClient() {
+    httpClient.baseUrl = 'http://192.168.1.7:3000';
   }
 }

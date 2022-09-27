@@ -1,8 +1,11 @@
+import 'package:answer_me_app/core/rest_client/exceptions/rest_client_exception.dart';
 import 'package:answer_me_app/features/authentication/domain/repositories/user_repository_interface.dart';
+import 'package:answer_me_app/shared/mixins/loading_mixin.dart';
+import 'package:answer_me_app/shared/mixins/message_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {
+class LoginController extends GetxController with LoaderMixin, MessageMixin {
   //Tela de login
   final showBlueBackground = false.obs;
   final showModalPage = false.obs;
@@ -14,28 +17,6 @@ class LoginController extends GetxController {
   final TextEditingController emailEC = TextEditingController();
   final TextEditingController passwordEC = TextEditingController();
   final isPasswordVisible = false.obs;
-
-  //Tela de esqueci minha senha (modal)
-  final GlobalKey<FormState> forgotMyPasswordGK = GlobalKey<FormState>();
-  final TextEditingController phoneEC = TextEditingController();
-
-  //Tela do código de confirmação (modal)
-  final GlobalKey<FormState> codeGK = GlobalKey<FormState>();
-  final TextEditingController firstDigitEC = TextEditingController();
-  final TextEditingController secondDigitEC = TextEditingController();
-  final TextEditingController thirdDigitEC = TextEditingController();
-  final TextEditingController fourthDigitEC = TextEditingController();
-  final FocusNode fourthDigitFN = FocusNode();
-  final FocusNode secondDigitFN = FocusNode();
-  final FocusNode thirdDigitFN = FocusNode();
-
-  //Tela do alteração de senha (modal)
-  final GlobalKey<FormState> changePasswordGK = GlobalKey<FormState>();
-  final isNewPasswordVisible = false.obs;
-  final isNewPasswordConfirmationVisible = false.obs;
-  final TextEditingController newPasswordEC = TextEditingController();
-  final TextEditingController newPasswordConfirmationEC =
-      TextEditingController();
 
   final UserRepositoryInterface _userRepository;
 
@@ -59,20 +40,11 @@ class LoginController extends GetxController {
     super.dispose();
     emailEC.dispose();
     passwordEC.dispose();
-    phoneEC.dispose();
-    firstDigitEC.dispose();
-    secondDigitEC.dispose();
-    thirdDigitEC.dispose();
-    fourthDigitEC.dispose();
-
-    secondDigitFN.dispose();
-    thirdDigitFN.dispose();
-    fourthDigitFN.dispose();
   }
 
   Future<void> login({required String email, required String password}) async {
     try {
-      // loading.toggle();
+      loading.toggle();
       final userLogged =
           await _userRepository.login(email: email, password: password);
 
@@ -81,70 +53,14 @@ class LoginController extends GetxController {
       // storage.write(AuthConstants.USER_KEY, userLogged.toJson());
       // storage.write(AuthConstants.USER_ACCESS_TOKEN, userLogged.accesstoken);
       debugPrint(userLogged);
-      // loading.toggle();
-    } catch (e, s) {
-      // } on UserNotFoundException catch (e, s) {
-      // loading.toggle();
-
-      // log('Usuário ou senha inválidos!', error: e, stackTrace: s);
-      // message(MessageModel(
-      //   title: 'Erro',
-      //   message: 'Usuário ou senha inválidos!',
-      //   type: MessageType.error,
-      // ));
-      // } catch (e, s) {
-      // loading.toggle();
-
-      // log('Erro ao realizar login.', error: e, stackTrace: s);
-      // message(MessageModel(
-      //   title: 'Erro',
-      //   message: 'Erro ao realizar login!',
-      //   type: MessageType.error,
-      // ));
-    }
-  }
-
-  Future<void> sendCode() async {
-    // loading.toggle();
-    await Future.delayed(const Duration(milliseconds: 2380), () {
-      // loading.toggle();
-    });
-
-    if (pageController.hasClients) {
-      pageController.animateToPage(
-        2,
-        duration: const Duration(milliseconds: 600),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
-  Future<void> verifyCode() async {
-    // loading.toggle();
-    await Future.delayed(const Duration(milliseconds: 2380), () {
-      // loading.toggle();
-    });
-    if (pageController.hasClients) {
-      pageController.animateToPage(
-        3,
-        duration: const Duration(milliseconds: 600),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
-  Future<void> redefinePassword() async {
-    // loading.toggle();
-    await Future.delayed(const Duration(milliseconds: 2380), () {
-      // loading.toggle();
-    });
-    if (pageController.hasClients) {
-      pageController.jumpTo(0);
-      // pageController.animateToPage(
-      //   0,
-      //   duration: const Duration(milliseconds: 600),
-      //   curve: Curves.easeInOut,
-      // );
+      loading.toggle();
+    } on RestClientException catch (e, s) {
+      loading.toggle();
+      message(MessageModel(
+        title: 'Erro',
+        message: e.message,
+        type: MessageType.error,
+      ));
     }
   }
 
