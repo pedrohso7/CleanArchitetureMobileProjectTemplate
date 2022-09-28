@@ -51,7 +51,7 @@ class LoginController extends GetxController with LoaderMixin, MessageMixin {
           await _userRepository.login(email: email, password: password);
 
       final GetStorage storage = GetStorage();
-      storage.write('user', response.body['usr'].toJson());
+      storage.write('user', response.body['usr']);
       storage.write('token', response.body['token']);
 
       loading.toggle();

@@ -1,3 +1,4 @@
+import 'package:answer_me_app/features/authentication/data/models/user_model.dart';
 import 'package:answer_me_app/features/authentication/domain/repositories/user_repository_interface.dart';
 import 'package:answer_me_app/shared/mixins/loading_mixin.dart';
 import 'package:answer_me_app/shared/mixins/message_mixin.dart';
@@ -10,23 +11,31 @@ class SplashController extends GetxController with LoaderMixin, MessageMixin {
   SplashController({required UserRepositoryInterface userRepository})
       : _userRepository = userRepository;
 
-  @override
-  void onInit() {
-    super.onInit();
-    Future.delayed(const Duration(milliseconds: 2680), () async {
+  void redirect() async {
+    await Future.delayed(const Duration(seconds: 2), () async {
       if (await isUserLogged()) {
         await Get.toNamed('/home');
         return;
       }
-      await Get.toNamed('/home');
+      await Get.toNamed('/auth/login');
     });
   }
 
   Future<bool> isUserLogged() async {
     final GetStorage storage = GetStorage();
-    final String token = storage.read('token');
-    final bool isUserTokenValid =
-        await _userRepository.isUserTokenValid(token: token);
+
+    final String? token = storage.read('token');
+    final Map? user = storage.read('user');
+
+    if (token == null || user == null) return false;
+
+    final UserModel userModel = UserModel.fromMap(user);
+
+    final bool isUserTokenValid = await _userRepository.isUserTokenValid(
+      token: token,
+      userId: userModel.id,
+    );
+
     return isUserTokenValid;
   }
 }

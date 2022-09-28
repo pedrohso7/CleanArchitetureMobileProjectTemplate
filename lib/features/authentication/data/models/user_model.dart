@@ -15,19 +15,19 @@ class UserModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
+      '_id': id,
       'name': name,
       'email': email,
       'createdAt': createdAt,
     };
   }
 
-  factory UserModel.fromMap(Map<String, dynamic> map) {
+  factory UserModel.fromMap(Map? map) {
     return UserModel(
-      map['id'] ?? '',
-      map['name'] ?? '',
-      map['email'] ?? '',
-      map['createdAt'] ?? '',
+      map != null ? map['_id'] : '',
+      map != null ? map['name'] : '',
+      map != null ? map['email'] : '',
+      map != null ? map['createdAt'] : '',
     );
   }
 

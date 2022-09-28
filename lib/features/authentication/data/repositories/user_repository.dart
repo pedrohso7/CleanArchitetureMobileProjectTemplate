@@ -60,10 +60,14 @@ class UserRepository implements UserRepositoryInterface {
   @override
   Future<bool> isUserTokenValid({
     required String token,
+    required String userId,
   }) async {
     final Response result = await restClient.get(
       '/auth/token',
-      query: {'token': token},
+      query: {
+        'token': token,
+        'userId': userId,
+      },
     );
 
     if (result.hasError) {
@@ -73,6 +77,6 @@ class UserRepository implements UserRepositoryInterface {
       );
     }
 
-    return result.body['isValid'];
+    return result.body;
   }
 }

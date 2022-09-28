@@ -11,8 +11,8 @@ abstract class UserRepositoryInterface {
     required String email,
     required String password,
   });
-
   Future<bool> isUserTokenValid({
     required String token,
+    required String userId,
   });
 }

@@ -1,5 +1,6 @@
 import 'package:answer_me_app/shared/bindings/app_bindings.dart';
 import 'package:answer_me_app/shared/routes/auth_routes.dart';
+import 'package:answer_me_app/shared/routes/home_routes.dart';
 import 'package:answer_me_app/shared/routes/splash_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -38,8 +39,9 @@ class AnswerMeApp extends StatelessWidget {
         Locale('pt', 'BR'),
       ],
       getPages: [
-        ...AuthRoutes.routers,
         ...SplashRoutes.routers,
+        ...HomeRoutes.routers,
+        ...AuthRoutes.routers,
       ],
     );
   }
