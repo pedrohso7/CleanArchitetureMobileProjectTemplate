@@ -1,4 +1,4 @@
-import 'package:answer_me_app/core/rest_client/rest_client.dart';
+import 'package:answer_me_app/features/authentication/data/datasources/rest_client.dart';
 import 'package:get/get.dart';
 
 class AppBindings implements Bindings {
