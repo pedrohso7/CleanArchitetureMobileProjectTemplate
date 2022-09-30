@@ -1,17 +1,14 @@
 import 'dart:convert';
 
-class UserModel {
-  final String id;
-  final String name;
-  final String email;
-  final String createdAt;
+import 'package:answer_me_app/features/authentication/domain/entities/user.dart';
 
+class UserModel extends User {
   UserModel(
-    this.id,
-    this.name,
-    this.email,
-    this.createdAt,
-  );
+    String id,
+    String name,
+    String email,
+    String createdAt,
+  ) : super(id, name, email, createdAt);
 
   Map<String, dynamic> toMap() {
     return {

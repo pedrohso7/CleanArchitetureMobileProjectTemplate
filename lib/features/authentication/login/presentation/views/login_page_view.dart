@@ -1,6 +1,6 @@
+import 'package:answer_me_app/core/widgets/default_button.dart';
+import 'package:answer_me_app/core/widgets/default_text_input.dart';
 import 'package:answer_me_app/features/authentication/login/presentation/login_controller.dart';
-import 'package:answer_me_app/shared/widgets/default_button.dart';
-import 'package:answer_me_app/shared/widgets/default_text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

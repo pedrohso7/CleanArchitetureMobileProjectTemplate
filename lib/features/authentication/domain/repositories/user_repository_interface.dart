@@ -15,4 +15,9 @@ abstract class UserRepositoryInterface {
     required String token,
     required String userId,
   });
+
+  User? getUserFromLocalStorage();
+  String? getTokenFromLocalStorage();
+  void writeUserOnLocalStorage(Map user);
+  void writeTokenOnLocalStorage(String token);
 }
