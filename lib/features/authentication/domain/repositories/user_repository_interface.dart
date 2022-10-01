@@ -11,13 +11,6 @@ abstract class UserRepositoryInterface {
     required String email,
     required String password,
   });
-  Future<bool> isUserTokenValid({
-    required String token,
-    required String userId,
-  });
-
-  User? getUserFromLocalStorage();
-  String? getTokenFromLocalStorage();
   void writeUserOnLocalStorage(Map user);
   void writeTokenOnLocalStorage(String token);
 }

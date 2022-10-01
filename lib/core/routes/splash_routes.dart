@@ -1,5 +1,5 @@
-import 'package:answer_me_app/features/splash/splash_bindings.dart';
-import 'package:answer_me_app/features/splash/splash_page.dart';
+import 'package:answer_me_app/features/splash/presentation/splash_bindings.dart';
+import 'package:answer_me_app/features/splash/presentation/splash_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class SplashRoutes {

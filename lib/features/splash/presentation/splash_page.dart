@@ -1,4 +1,4 @@
-import 'package:answer_me_app/features/splash/splash_controller.dart';
+import 'package:answer_me_app/features/splash/presentation/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

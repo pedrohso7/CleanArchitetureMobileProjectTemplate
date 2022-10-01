@@ -1,6 +1,7 @@
 import 'package:answer_me_app/core/mixins/loading_mixin.dart';
-import 'package:answer_me_app/features/authentication/domain/usecases/is_user_logged.dart';
 import 'package:get/get.dart';
+
+import '../domain/usecases/is_user_logged.dart';
 
 class SplashController extends GetxController with LoaderMixin {
   final IsUserLogged _isUserLoggedUsecase;
