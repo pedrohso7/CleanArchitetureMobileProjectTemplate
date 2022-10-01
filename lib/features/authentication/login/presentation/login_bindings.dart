@@ -7,11 +7,7 @@ import './login_controller.dart';
 class LoginBindings implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<UserRepositoryInterface>(
-      () => UserRepository(
-          remoteDataSource: Get.find(), localDataSource: Get.find()),
-    );
-
+    //Usecases and ViewController
     Get.lazyPut(
       () => Login(Get.find()),
     );

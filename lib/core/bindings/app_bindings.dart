@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 class AppBindings implements Bindings {
   @override
   void dependencies() {
-    // ! Bindings usados em todo app
+    // Bindings from core
     Get.lazyPut(() => RemoteClient(), fenix: true);
     Get.lazyPut(() => GetStorage(), fenix: true);
   }
