@@ -53,7 +53,7 @@ class LoginController extends GetxController with LoaderMixin, MessageMixin {
       loading.toggle();
 
       await Get.toNamed('/home');
-    } on RemoteClientException catch (e, s) {
+    } on RemoteClientException catch (e) {
       loading.toggle();
       message(MessageModel(
         title: 'Erro',
