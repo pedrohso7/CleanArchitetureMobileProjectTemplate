@@ -8,7 +8,8 @@ class LoginBindings implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<UserRepositoryInterface>(
-      () => UserRepository(restClient: Get.find()),
+      () => UserRepository(
+          remoteDataSource: Get.find(), localDataSource: Get.find()),
     );
 
     Get.lazyPut(

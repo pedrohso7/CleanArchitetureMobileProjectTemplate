@@ -1,4 +1,4 @@
-import 'package:answer_me_app/core/errors/rest_client_exception.dart';
+import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:answer_me_app/core/mixins/loading_mixin.dart';
 import 'package:answer_me_app/core/mixins/message_mixin.dart';
 import 'package:answer_me_app/features/authentication/domain/usecases/login.dart';
@@ -53,7 +53,7 @@ class LoginController extends GetxController with LoaderMixin, MessageMixin {
       loading.toggle();
 
       await Get.toNamed('/home');
-    } on RestClientException catch (e, s) {
+    } on RemoteClientException catch (e, s) {
       loading.toggle();
       message(MessageModel(
         title: 'Erro',
