@@ -1,18 +1,17 @@
+import 'package:answer_me_app/features/authentication/data/models/user_model.dart';
 import 'package:get_storage/get_storage.dart';
 
-import '../models/user_model.dart';
-
-abstract class LocalDataSourceInterface {
+abstract class AuthLocalDataSourceInterface {
   UserModel? getUserFromLocalStorage();
   String? getTokenFromLocalStorage();
   void writeUserOnLocalStorage(Map user);
   void writeTokenOnLocalStorage(String token);
 }
 
-class LocalDataSource implements LocalDataSourceInterface {
+class AuthLocalDataSource implements AuthLocalDataSourceInterface {
   final GetStorage getStorage;
 
-  LocalDataSource({required this.getStorage});
+  AuthLocalDataSource({required this.getStorage});
 
   @override
   UserModel? getUserFromLocalStorage() {

@@ -1,17 +1,18 @@
-import 'package:answer_me_app/features/authentication/data/models/user_model.dart';
 import 'package:get_storage/get_storage.dart';
 
-abstract class LocalDataSourceInterface {
+import '../models/user_model.dart';
+
+abstract class SplashLocalDataSourceInterface {
   UserModel? getUserFromLocalStorage();
   String? getTokenFromLocalStorage();
   void writeUserOnLocalStorage(Map user);
   void writeTokenOnLocalStorage(String token);
 }
 
-class LocalDataSource implements LocalDataSourceInterface {
+class SplashLocalDataSource implements SplashLocalDataSourceInterface {
   final GetStorage getStorage;
 
-  LocalDataSource({required this.getStorage});
+  SplashLocalDataSource({required this.getStorage});
 
   @override
   UserModel? getUserFromLocalStorage() {

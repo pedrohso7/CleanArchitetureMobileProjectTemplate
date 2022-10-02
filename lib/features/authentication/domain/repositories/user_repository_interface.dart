@@ -1,5 +1,6 @@
-import 'package:answer_me_app/features/authentication/domain/entities/user.dart';
 import 'package:get/get.dart';
+
+import '../entities/user.dart';
 
 abstract class UserRepositoryInterface {
   Future<User> register({

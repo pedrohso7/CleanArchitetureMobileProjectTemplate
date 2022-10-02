@@ -1,23 +1,26 @@
-import 'package:answer_me_app/features/authentication/data/datasources/local_datasource.dart';
-import 'package:answer_me_app/features/authentication/data/datasources/remote_datasource.dart';
-import 'package:answer_me_app/features/authentication/data/repositories/user_repository.dart';
-import 'package:answer_me_app/features/authentication/domain/repositories/user_repository_interface.dart';
 import 'package:get/get.dart';
+
+import 'data/datasources/auth_local_datasource.dart';
+import 'data/datasources/auth_remote_datasource.dart';
+import 'data/repositories/user_repository.dart';
+import 'domain/repositories/user_repository_interface.dart';
 
 class AuthBindings implements Bindings {
   @override
   void dependencies() {
     //From data
-    Get.lazyPut<RemoteDataSourceInterface>(
-      () => RemoteDataSource(
-        remoteClient: Get.find(),
-      ),
-    );
-    Get.lazyPut<LocalDataSourceInterface>(
-      () => LocalDataSource(
+    Get.lazyPut<AuthLocalDataSourceInterface>(
+      () => AuthLocalDataSource(
         getStorage: Get.find(),
       ),
     );
+
+    Get.lazyPut<AuthRemoteDataSourceInterface>(
+      () => AuthRemoteDataSource(
+        remoteClient: Get.find(),
+      ),
+    );
+
     Get.lazyPut<UserRepositoryInterface>(
       () => UserRepository(
         remoteDataSource: Get.find(),

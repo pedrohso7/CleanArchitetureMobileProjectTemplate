@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../models/user_model.dart';
 
-abstract class RemoteDataSourceInterface {
+abstract class SplashRemoteDataSourceInterface {
   Future<UserModel> register({
     required String name,
     required String email,
@@ -20,10 +20,10 @@ abstract class RemoteDataSourceInterface {
   });
 }
 
-class RemoteDataSource implements RemoteDataSourceInterface {
+class SplashRemoteDataSource implements SplashRemoteDataSourceInterface {
   final RemoteClient remoteClient;
 
-  RemoteDataSource({required this.remoteClient});
+  SplashRemoteDataSource({required this.remoteClient});
 
   @override
   Future<UserModel> register({

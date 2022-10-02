@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/user_repository_interface.dart';
-import '../datasources/local_datasource.dart';
-import '../datasources/remote_datasource.dart';
+import '../datasources/auth_local_datasource.dart';
+import '../datasources/auth_remote_datasource.dart';
 
 class UserRepository implements UserRepositoryInterface {
-  final RemoteDataSourceInterface remoteDataSource;
-  final LocalDataSourceInterface localDataSource;
+  final AuthRemoteDataSourceInterface remoteDataSource;
+  final AuthLocalDataSourceInterface localDataSource;
 
   UserRepository({
     required this.remoteDataSource,

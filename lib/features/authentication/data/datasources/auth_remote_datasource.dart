@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../models/user_model.dart';
 
-abstract class RemoteDataSourceInterface {
+abstract class AuthRemoteDataSourceInterface {
   Future<UserModel> register({
     required String name,
     required String email,
@@ -14,16 +14,12 @@ abstract class RemoteDataSourceInterface {
     required String email,
     required String password,
   });
-  Future<bool> isUserTokenValid({
-    required String token,
-    required String userId,
-  });
 }
 
-class RemoteDataSource implements RemoteDataSourceInterface {
+class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
   final RemoteClient remoteClient;
 
-  RemoteDataSource({required this.remoteClient});
+  AuthRemoteDataSource({required this.remoteClient});
 
   @override
   Future<UserModel> register({
@@ -71,28 +67,5 @@ class RemoteDataSource implements RemoteDataSourceInterface {
     }
 
     return result;
-  }
-
-  @override
-  Future<bool> isUserTokenValid({
-    required String token,
-    required String userId,
-  }) async {
-    final Response result = await remoteClient.get(
-      '/auth/token',
-      query: {
-        'token': token,
-        'userId': userId,
-      },
-    );
-
-    if (result.hasError) {
-      throw RemoteClientException(
-        '${result.body['error']}',
-        code: result.statusCode,
-      );
-    }
-
-    return result.body;
   }
 }

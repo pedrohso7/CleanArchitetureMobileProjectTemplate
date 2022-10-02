@@ -1,11 +1,11 @@
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/splash_repository_interface.dart';
-import '../datasources/local_datasource.dart';
-import '../datasources/remote_datasource.dart';
+import '../datasources/splash_local_datasource.dart';
+import '../datasources/splash_remote_datasource.dart';
 
 class SplashRepository implements SplashRepositoryInterface {
-  final RemoteDataSourceInterface remoteDataSource;
-  final LocalDataSourceInterface localDataSource;
+  final SplashRemoteDataSourceInterface remoteDataSource;
+  final SplashLocalDataSourceInterface localDataSource;
 
   SplashRepository({
     required this.remoteDataSource,
