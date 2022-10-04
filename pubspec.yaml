@@ -17,6 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   material_design_icons_flutter: ^5.0.6996
+  dartz: ^0.10.1
   
 dev_dependencies:
   flutter_test:

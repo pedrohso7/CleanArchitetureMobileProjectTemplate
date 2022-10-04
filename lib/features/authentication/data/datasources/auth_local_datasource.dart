@@ -1,9 +1,7 @@
-import 'package:answer_me_app/features/authentication/data/models/user_model.dart';
+import 'package:answer_me_app/core/errors/local_storage_exception.dart';
 import 'package:get_storage/get_storage.dart';
 
 abstract class AuthLocalDataSourceInterface {
-  UserModel? getUserFromLocalStorage();
-  String? getTokenFromLocalStorage();
   void writeUserOnLocalStorage(Map user);
   void writeTokenOnLocalStorage(String token);
 }
@@ -14,27 +12,22 @@ class AuthLocalDataSource implements AuthLocalDataSourceInterface {
   AuthLocalDataSource({required this.getStorage});
 
   @override
-  UserModel? getUserFromLocalStorage() {
-    final Map? user = getStorage.read('user');
-
-    if (user == null) return null;
-
-    return UserModel.fromMap(user);
+  void writeUserOnLocalStorage(Map user) {
+    try {
+      getStorage.write('user', user);
+    } catch (e) {
+      throw LocalStorageException(
+          message: 'Erro ao registrar recurso em cache');
+    }
   }
 
   @override
-  String? getTokenFromLocalStorage() {
-    final String? token = getStorage.read('token');
-
-    if (token == null) return null;
-
-    return token;
-  }
-
-  @override
-  void writeUserOnLocalStorage(Map user) => getStorage.write('user', user);
-
-  @override
-  void writeTokenOnLocalStorage(String token) =>
+  void writeTokenOnLocalStorage(String token) {
+    try {
       getStorage.write('token', token);
+    } catch (e) {
+      throw LocalStorageException(
+          message: 'Erro ao registrar recurso em cache');
+    }
+  }
 }

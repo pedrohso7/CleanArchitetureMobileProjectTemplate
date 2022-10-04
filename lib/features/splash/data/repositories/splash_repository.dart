@@ -1,3 +1,7 @@
+import 'package:answer_me_app/core/errors/local_storage_exception.dart';
+import 'package:answer_me_app/core/errors/remote_client_exception.dart';
+import 'package:dartz/dartz.dart';
+
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/splash_repository_interface.dart';
 import '../datasources/splash_local_datasource.dart';
@@ -13,23 +17,35 @@ class SplashRepository implements SplashRepositoryInterface {
   });
 
   @override
-  Future<bool> isUserTokenValid({
+  Future<Either<RemoteClientException, bool>> isUserTokenValid({
     required String token,
     required String userId,
   }) async {
-    return remoteDataSource.isUserTokenValid(
-      token: token,
-      userId: userId,
-    );
+    try {
+      return Right(await remoteDataSource.isUserTokenValid(
+        token: token,
+        userId: userId,
+      ));
+    } on RemoteClientException catch (e) {
+      return Left(e);
+    }
   }
 
   @override
-  User? getUserFromLocalStorage() {
-    return localDataSource.getUserFromLocalStorage();
+  Either<LocalStorageException, User> getUserFromLocalStorage() {
+    try {
+      return Right(localDataSource.getUserFromLocalStorage());
+    } on LocalStorageException catch (e) {
+      return Left(e);
+    }
   }
 
   @override
-  String? getTokenFromLocalStorage() {
-    return localDataSource.getTokenFromLocalStorage();
+  Either<LocalStorageException, String> getTokenFromLocalStorage() {
+    try {
+      return Right(localDataSource.getTokenFromLocalStorage());
+    } on LocalStorageException catch (e) {
+      return Left(e);
+    }
   }
 }

@@ -1,12 +1,11 @@
+import 'package:answer_me_app/core/errors/local_storage_exception.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../models/user_model.dart';
 
 abstract class SplashLocalDataSourceInterface {
-  UserModel? getUserFromLocalStorage();
-  String? getTokenFromLocalStorage();
-  void writeUserOnLocalStorage(Map user);
-  void writeTokenOnLocalStorage(String token);
+  UserModel getUserFromLocalStorage();
+  String getTokenFromLocalStorage();
 }
 
 class SplashLocalDataSource implements SplashLocalDataSourceInterface {
@@ -15,27 +14,24 @@ class SplashLocalDataSource implements SplashLocalDataSourceInterface {
   SplashLocalDataSource({required this.getStorage});
 
   @override
-  UserModel? getUserFromLocalStorage() {
+  UserModel getUserFromLocalStorage() {
     final Map? user = getStorage.read('user');
 
-    if (user == null) return null;
+    if (user == null) {
+      throw LocalStorageException(message: 'Erro ao buscar recurso em cache');
+    }
 
     return UserModel.fromMap(user);
   }
 
   @override
-  String? getTokenFromLocalStorage() {
+  String getTokenFromLocalStorage() {
     final String? token = getStorage.read('token');
 
-    if (token == null) return null;
+    if (token == null) {
+      throw LocalStorageException(message: 'Erro ao buscar recurso em cache');
+    }
 
     return token;
   }
-
-  @override
-  void writeUserOnLocalStorage(Map user) => getStorage.write('user', user);
-
-  @override
-  void writeTokenOnLocalStorage(String token) =>
-      getStorage.write('token', token);
 }

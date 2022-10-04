@@ -1,17 +1,20 @@
+import 'package:answer_me_app/core/errors/local_storage_exception.dart';
+import 'package:answer_me_app/core/errors/remote_client_exception.dart';
+import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 
 import '../entities/user.dart';
 
 abstract class UserRepositoryInterface {
-  Future<User> register({
+  Future<Either<RemoteClientException, User>> register({
     required String name,
     required String email,
     required String password,
   });
-  Future<Response> login({
+  Future<Either<RemoteClientException, Response>> login({
     required String email,
     required String password,
   });
-  void writeUserOnLocalStorage(Map user);
-  void writeTokenOnLocalStorage(String token);
+  Either<LocalStorageException, void> writeUserOnLocalStorage(Map user);
+  Either<LocalStorageException, void> writeTokenOnLocalStorage(String token);
 }
