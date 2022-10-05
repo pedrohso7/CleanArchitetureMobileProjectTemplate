@@ -1,11 +1,13 @@
 import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:answer_me_app/core/mixins/loading_mixin.dart';
 import 'package:answer_me_app/core/mixins/message_mixin.dart';
+import 'package:answer_me_app/core/mixins/validators_mixin.dart';
 import 'package:answer_me_app/features/authentication/domain/usecases/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class RegisterController extends GetxController with LoaderMixin, MessageMixin {
+class RegisterController extends GetxController
+    with LoaderMixin, MessageMixin, ValidatorsMixin {
   //Tela de cadastro
   final ScrollController scrollController = ScrollController();
   final GlobalKey<FormState> registerGK = GlobalKey<FormState>();

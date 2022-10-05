@@ -1,11 +1,13 @@
 import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:answer_me_app/core/mixins/loading_mixin.dart';
 import 'package:answer_me_app/core/mixins/message_mixin.dart';
+import 'package:answer_me_app/core/mixins/validators_mixin.dart';
 import 'package:answer_me_app/features/authentication/domain/usecases/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController with LoaderMixin, MessageMixin {
+class LoginController extends GetxController
+    with LoaderMixin, MessageMixin, ValidatorsMixin {
   //Tela de login
   final showBlueBackground = false.obs;
   final showModalPage = false.obs;

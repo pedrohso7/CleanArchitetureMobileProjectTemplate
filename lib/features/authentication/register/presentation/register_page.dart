@@ -53,17 +53,16 @@ class RegisterPage extends GetView<RegisterController> {
                       RegisterTextInput(
                         label: 'Nome',
                         controller: controller.nameEC,
-                        // validator: Validatorless.required('Campo obrigatório.'),
+                        validator: (val) =>
+                            controller.requiredValidator(val ?? ''),
                         icon: MdiIcons.accountBox,
                       ),
                       const SizedBox(height: 25),
                       RegisterTextInput(
                         label: 'Email',
                         controller: controller.emailEC,
-                        // validator: Validatorless.multiple([
-                        //   Validatorless.required('Campo obrigatório.'),
-                        //   Validatorless.email('E-mail inválido.'),
-                        // ]),
+                        validator: (val) =>
+                            controller.emailValidator(val ?? ''),
                         keyboardType: TextInputType.emailAddress,
                         icon: MdiIcons.email,
                       ),
@@ -74,6 +73,8 @@ class RegisterPage extends GetView<RegisterController> {
                               .value = !(controller.isPasswordVisible.value),
                           controller: controller.passwordEC,
                           isPasswordVisible: controller.isPasswordVisible.value,
+                          validator: (val) =>
+                              controller.requiredValidator(val ?? ''),
                         );
                       }),
                       const SizedBox(height: 25),
@@ -86,6 +87,8 @@ class RegisterPage extends GetView<RegisterController> {
                           label: 'Confirme sua senha',
                           isPasswordVisible:
                               controller.isPasswordConfirmationVisible.value,
+                          validator: (val) =>
+                              controller.requiredValidator(val ?? ''),
                         );
                       }),
                       const SizedBox(height: 35),

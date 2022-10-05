@@ -70,10 +70,7 @@ class LoginPageView extends GetView<LoginController> {
                         textScaleFactor: 1,
                       ),
                       controller: controller.emailEC,
-                      // validator: Validatorless.multiple([
-                      //   Validatorless.required('Campo obrigatório.'),
-                      //   Validatorless.email('E-mail inválido.'),
-                      // ]),
+                      validator: (val) => controller.emailValidator(val ?? ''),
                       keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 25),
@@ -98,7 +95,8 @@ class LoginPageView extends GetView<LoginController> {
                           textScaleFactor: 1,
                         ),
                         controller: controller.passwordEC,
-                        // validator: Validatorless.required('Campo obrigatório.'),
+                        validator: (val) =>
+                            controller.requiredValidator(val ?? ''),
                         suffixWidget: IconButton(
                           splashColor: Colors.transparent,
                           onPressed: () => controller.isPasswordVisible.value =

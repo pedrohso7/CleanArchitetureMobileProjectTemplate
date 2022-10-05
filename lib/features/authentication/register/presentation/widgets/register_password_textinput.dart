@@ -43,7 +43,7 @@ class RegisterPasswordTextInput extends StatelessWidget {
         ),
       ),
       controller: controller,
-      // validator: Validatorless.required('Campo obrigatório.'),
+      validator: validator,
       suffixWidget: IconButton(
         splashColor: Colors.transparent,
         onPressed: onTapRightIcon,
