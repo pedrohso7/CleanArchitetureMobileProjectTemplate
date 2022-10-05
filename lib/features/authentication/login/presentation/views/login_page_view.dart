@@ -195,9 +195,9 @@ class LoginPageView extends GetView<LoginController> {
                   ],
                 ),
                 TextButton(
-                  onPressed: () => Get.toNamed(''
-                      // RoutesConstants.AUTH_REGISTER_ROUTE_PATH,
-                      ),
+                  onPressed: () => Get.toNamed(
+                    '/auth/register',
+                  ),
                   style: const ButtonStyle(
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),

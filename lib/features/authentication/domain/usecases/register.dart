@@ -11,11 +11,20 @@ class Register {
     required String name,
     required String email,
     required String password,
-  }) {
-    return userRepository.register(
+  }) async {
+    final Either<RemoteClientException, User> response =
+        await userRepository.register(
       name: name,
       email: email,
       password: password,
     );
+
+    if (response.isLeft()) {
+      final RemoteClientException? exception =
+          response.fold((l) => l, (r) => null);
+      throw exception!;
+    }
+
+    return response;
   }
 }

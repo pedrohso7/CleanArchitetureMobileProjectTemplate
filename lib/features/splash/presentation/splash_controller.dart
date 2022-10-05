@@ -12,10 +12,10 @@ class SplashController extends GetxController with LoaderMixin {
   void redirect() async {
     await Future.delayed(const Duration(seconds: 2), () async {
       if (await _isUserLoggedUsecase.execute()) {
-        await Get.toNamed('/home');
+        await Get.offNamed('/home');
         return;
       }
-      await Get.toNamed('/auth/login');
+      await Get.offNamed('/auth/login');
     });
   }
 }

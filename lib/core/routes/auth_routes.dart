@@ -1,7 +1,10 @@
-import 'package:answer_me_app/features/authentication/auth_bindings.dart';
-import 'package:answer_me_app/features/authentication/login/presentation/login_bindings.dart';
-import 'package:answer_me_app/features/authentication/login/presentation/login_page.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get.dart';
+
+import '../../features/authentication/auth_bindings.dart';
+import '../../features/authentication/login/presentation/login_bindings.dart';
+import '../../features/authentication/login/presentation/login_page.dart';
+import '../../features/authentication/register/presentation/register_bindings.dart';
+import '../../features/authentication/register/presentation/register_page.dart';
 
 class AuthRoutes {
   AuthRoutes._();
@@ -14,12 +17,15 @@ class AuthRoutes {
       ],
       page: () => const LoginPage(),
     ),
-    // GetPage(
-    //   name: 'auth/register',
-    //   binding: RegisterBindings(),
-    //   page: () => const RegisterPage(),
-    //   transition: Transition.downToUp,
-    //   transitionDuration: const Duration(milliseconds: 200),
-    // ),
+    GetPage(
+      name: '/auth/register',
+      bindings: [
+        AuthBindings(),
+        RegisterBindings(),
+      ],
+      page: () => const RegisterPage(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 200),
+    ),
   ];
 }

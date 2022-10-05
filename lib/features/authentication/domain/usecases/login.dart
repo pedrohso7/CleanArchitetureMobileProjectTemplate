@@ -11,7 +11,7 @@ class Login {
     required String email,
     required String password,
   }) async {
-    final response =
+    final Either<RemoteClientException, Response> response =
         await userRepository.login(email: email, password: password);
 
     if (response.isLeft()) {
