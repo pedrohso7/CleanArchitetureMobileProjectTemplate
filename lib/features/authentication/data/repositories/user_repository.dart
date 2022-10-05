@@ -17,7 +17,7 @@ class UserRepository implements UserRepositoryInterface {
   });
 
   @override
-  Future<Either<RemoteClientException, User>> register({
+  Future<Either<RemoteClientException, Response>> register({
     required String name,
     required String email,
     required String password,

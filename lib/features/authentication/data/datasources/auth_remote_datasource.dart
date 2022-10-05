@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../models/user_model.dart';
 
 abstract class AuthRemoteDataSourceInterface {
-  Future<UserModel> register({
+  Future<Response> register({
     required String name,
     required String email,
     required String password,
@@ -22,12 +22,12 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
   AuthRemoteDataSource({required this.remoteClient});
 
   @override
-  Future<UserModel> register({
+  Future<Response> register({
     required String name,
     required String email,
     required String password,
   }) async {
-    final result = await remoteClient.post(
+    final Response result = await remoteClient.post(
       '/auth/register',
       {
         'name': name,
@@ -43,7 +43,7 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
       );
     }
 
-    return UserModel('j0ke', 'email', 'password', '');
+    return result;
   }
 
   @override

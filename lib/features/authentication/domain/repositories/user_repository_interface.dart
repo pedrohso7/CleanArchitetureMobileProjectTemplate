@@ -3,10 +3,8 @@ import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 
-import '../entities/user.dart';
-
 abstract class UserRepositoryInterface {
-  Future<Either<RemoteClientException, User>> register({
+  Future<Either<RemoteClientException, Response>> register({
     required String name,
     required String email,
     required String password,

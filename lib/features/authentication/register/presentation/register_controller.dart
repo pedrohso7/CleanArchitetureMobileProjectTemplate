@@ -44,7 +44,7 @@ class RegisterController extends GetxController with LoaderMixin, MessageMixin {
 
         loading.toggle();
 
-        await Get.toNamed('/home');
+        await Get.offAllNamed('/home');
       }
     } on RemoteClientException catch (e) {
       loading.toggle();
