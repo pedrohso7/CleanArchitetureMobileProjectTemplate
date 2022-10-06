@@ -43,18 +43,21 @@ class LoginController extends GetxController
     passwordEC.dispose();
   }
 
-  Future<void> login({required String email, required String password}) async {
+  Future<void> login() async {
     try {
-      loading.toggle();
+      Get.focusScope?.unfocus();
+      if (loginGK.currentState?.validate() ?? false) {
+        loading.toggle();
 
-      await _loginUsecase.execute(
-        email: email,
-        password: password,
-      );
+        await _loginUsecase.execute(
+          email: emailEC.text,
+          password: passwordEC.text,
+        );
 
-      loading.toggle();
+        loading.toggle();
 
-      await Get.toNamed('/home');
+        await Get.toNamed('/home');
+      }
     } on RemoteClientException catch (e) {
       loading.toggle();
       message(MessageModel(
