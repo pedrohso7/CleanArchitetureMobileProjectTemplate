@@ -2,8 +2,6 @@ import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:answer_me_app/core/platform/remote_client.dart';
 import 'package:get/get.dart';
 
-import '../models/user_model.dart';
-
 abstract class AuthRemoteDataSourceInterface {
   Future<Response> register({
     required String name,

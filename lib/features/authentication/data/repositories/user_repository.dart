@@ -2,7 +2,6 @@ import 'package:answer_me_app/core/errors/local_storage_exception.dart';
 import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
-import '../../domain/entities/user.dart';
 import '../../domain/repositories/user_repository_interface.dart';
 import '../datasources/auth_local_datasource.dart';
 import '../datasources/auth_remote_datasource.dart';
