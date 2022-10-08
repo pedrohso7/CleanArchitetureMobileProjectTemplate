@@ -1,3 +1,4 @@
+import 'package:answer_me_app/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
@@ -37,7 +38,8 @@ class DefaultButton extends StatelessWidget {
               style: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: revertColor ? Colors.blue : const Color(0xFFF2F2F2),
+                color:
+                    revertColor ? ColorsConstants.PRIMARY_COLOR : Colors.white,
               ),
             ),
         style: ElevatedButton.styleFrom(
@@ -47,8 +49,9 @@ class DefaultButton extends StatelessWidget {
                 ? BorderSide(color: color ?? const Color(0xFF016EA7))
                 : BorderSide.none,
           ),
-          backgroundColor:
-              revertColor ? const Color(0xFFF2F2F2) : color ?? Colors.blue,
+          backgroundColor: revertColor
+              ? Colors.white
+              : color ?? ColorsConstants.PRIMARY_COLOR,
         ),
       ),
     );

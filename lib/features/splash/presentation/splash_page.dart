@@ -8,9 +8,18 @@ class SplashPage extends GetView<SplashController> {
   Widget build(BuildContext context) {
     controller.redirect();
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: context.theme.primaryColor,
       body: Center(
-        child: Image.asset('lib/assets/images/brain.png'),
+        child: SizedBox(
+          width: 300,
+          height: 300,
+          child: ClipOval(
+            child: Material(
+              color: Colors.white,
+              child: Image.asset('lib/assets/images/brain.png'),
+            ),
+          ),
+        ),
       ),
     );
   }

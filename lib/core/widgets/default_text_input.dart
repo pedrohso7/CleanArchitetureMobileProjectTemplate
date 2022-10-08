@@ -28,7 +28,7 @@ class DefaultTextInput extends StatelessWidget {
     this.label,
     this.contentPadding = const EdgeInsets.symmetric(vertical: 0.0),
     this.borderColor = Colors.transparent,
-    this.fillColor = const Color.fromARGB(255, 238, 238, 238),
+    this.fillColor = Colors.white,
     this.radius = 25.0,
     this.icon,
     this.controller,

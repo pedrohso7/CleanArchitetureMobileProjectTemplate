@@ -25,16 +25,13 @@ class LoginPageView extends GetView<LoginController> {
           children: [
             const SizedBox(height: 220),
             Container(
-              height: 380,
               width: mq.size.width,
               margin: const EdgeInsets.symmetric(horizontal: 40),
-              padding: const EdgeInsets.only(
-                right: 40,
-                left: 40,
-                top: 25,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 40,
+                vertical: 20,
               ),
               decoration: BoxDecoration(
-                color: Colors.white,
                 borderRadius: BorderRadius.circular(32),
               ),
               child: Form(
@@ -45,11 +42,11 @@ class LoginPageView extends GetView<LoginController> {
                       'Login',
                       style: TextStyle(
                         color: context.theme.primaryColor,
-                        fontSize: 34,
+                        fontSize: 40,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 33),
+                    const SizedBox(height: 40),
                     LoginTextInput(
                       controller: controller.emailEC,
                       label: 'Email',
