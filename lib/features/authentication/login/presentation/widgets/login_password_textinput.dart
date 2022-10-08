@@ -15,7 +15,7 @@ class LoginPasswordTextInput extends StatelessWidget {
     required this.controller,
     this.label = 'Senha',
     this.validator,
-    this.isPasswordVisible = false,
+    required this.isPasswordVisible,
   }) : super(key: key);
 
   @override

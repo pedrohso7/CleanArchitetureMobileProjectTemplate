@@ -9,8 +9,8 @@ import 'package:get/get.dart';
 class LoginController extends GetxController
     with LoaderMixin, MessageMixin, ValidatorsMixin {
   //Tela de login
-  final showBlueBackground = false.obs;
-  final showModalPage = false.obs;
+  final RxBool showBlueBackground = false.obs;
+  final RxBool showModalPage = false.obs;
   final ScrollController scrollController = ScrollController();
   final PageController pageController = PageController();
 
@@ -18,7 +18,7 @@ class LoginController extends GetxController
   final GlobalKey<FormState> loginGK = GlobalKey<FormState>();
   final TextEditingController emailEC = TextEditingController();
   final TextEditingController passwordEC = TextEditingController();
-  final isPasswordVisible = false.obs;
+  final RxBool isPasswordVisible = false.obs;
 
   final Login _loginUsecase;
 

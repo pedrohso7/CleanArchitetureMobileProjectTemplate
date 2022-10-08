@@ -62,6 +62,7 @@ class LoginPageView extends GetView<LoginController> {
                         controller: controller.passwordEC,
                         validator: (val) =>
                             controller.requiredValidator(val ?? ''),
+                        isPasswordVisible: controller.isPasswordVisible.value,
                       );
                     }),
                     const SizedBox(height: 35),
