@@ -2,6 +2,7 @@ import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:answer_me_app/core/mixins/loading_mixin.dart';
 import 'package:answer_me_app/core/mixins/message_mixin.dart';
 import 'package:answer_me_app/core/mixins/validators_mixin.dart';
+import 'package:answer_me_app/core/usecases/usecase.dart';
 import 'package:answer_me_app/features/authentication/domain/usecases/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,9 +19,9 @@ class RegisterController extends GetxController
   final RxBool isPasswordVisible = false.obs;
   final RxBool isPasswordConfirmationVisible = false.obs;
 
-  final Register _registerUsecase;
+  final UseCase _registerUsecase;
 
-  RegisterController({required Register registerUsecase})
+  RegisterController({required UseCase registerUsecase})
       : _registerUsecase = registerUsecase;
 
   @override
@@ -38,11 +39,11 @@ class RegisterController extends GetxController
       if (registerGK.currentState?.validate() ?? false) {
         loading.toggle();
 
-        await _registerUsecase.execute(
+        await _registerUsecase.call(Params(
           name: nameEC.text,
           email: emailEC.text,
           password: passwordEC.text,
-        );
+        ));
 
         loading.toggle();
 

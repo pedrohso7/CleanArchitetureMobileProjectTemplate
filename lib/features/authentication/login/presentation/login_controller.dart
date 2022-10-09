@@ -2,9 +2,11 @@ import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:answer_me_app/core/mixins/loading_mixin.dart';
 import 'package:answer_me_app/core/mixins/message_mixin.dart';
 import 'package:answer_me_app/core/mixins/validators_mixin.dart';
-import 'package:answer_me_app/features/authentication/domain/usecases/login.dart';
+import 'package:answer_me_app/core/usecases/usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../domain/usecases/login.dart';
 
 class LoginController extends GetxController
     with LoaderMixin, MessageMixin, ValidatorsMixin {
@@ -20,9 +22,10 @@ class LoginController extends GetxController
   final TextEditingController passwordEC = TextEditingController();
   final RxBool isPasswordVisible = false.obs;
 
-  final Login _loginUsecase;
+  final UseCase _loginUsecase;
 
-  LoginController({required Login loginUsecase}) : _loginUsecase = loginUsecase;
+  LoginController({required UseCase loginUsecase})
+      : _loginUsecase = loginUsecase;
 
   @override
   void onInit() {
@@ -49,10 +52,10 @@ class LoginController extends GetxController
       if (loginGK.currentState?.validate() ?? false) {
         loading.toggle();
 
-        await _loginUsecase.execute(
+        await _loginUsecase.call(Params(
           email: emailEC.text,
           password: passwordEC.text,
-        );
+        ));
 
         loading.toggle();
 

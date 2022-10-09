@@ -1,15 +1,17 @@
 import 'package:answer_me_app/core/errors/local_storage_exception.dart';
 import 'package:answer_me_app/core/errors/remote_client_exception.dart';
+import 'package:answer_me_app/core/usecases/usecase.dart';
 import 'package:dartz/dartz.dart';
 
 import '../entities/user.dart';
 import '../repositories/splash_repository_interface.dart';
 
-class IsUserLogged {
+class IsUserLogged implements UseCase<bool, NoParams> {
   final SplashRepositoryInterface splashRepository;
   IsUserLogged(this.splashRepository);
 
-  Future<bool> execute() async {
+  @override
+  Future<bool> call(NoParams params) async {
     final Either<LocalStorageException, String> token =
         splashRepository.getTokenFromLocalStorage();
 

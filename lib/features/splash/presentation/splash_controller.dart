@@ -1,17 +1,16 @@
 import 'package:answer_me_app/core/mixins/loading_mixin.dart';
+import 'package:answer_me_app/core/usecases/usecase.dart';
 import 'package:get/get.dart';
 
-import '../domain/usecases/is_user_logged.dart';
-
 class SplashController extends GetxController with LoaderMixin {
-  final IsUserLogged _isUserLoggedUsecase;
+  final UseCase _isUserLoggedUsecase;
 
-  SplashController({required IsUserLogged isUserLoggedUsecase})
+  SplashController({required UseCase isUserLoggedUsecase})
       : _isUserLoggedUsecase = isUserLoggedUsecase;
 
   void redirect() async {
     await Future.delayed(const Duration(seconds: 2), () async {
-      if (await _isUserLoggedUsecase.execute()) {
+      if (await _isUserLoggedUsecase.call(NoParams())) {
         await Get.offNamed('/home');
         return;
       }

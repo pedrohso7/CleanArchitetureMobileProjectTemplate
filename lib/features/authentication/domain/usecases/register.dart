@@ -1,22 +1,20 @@
 import 'package:answer_me_app/core/errors/remote_client_exception.dart';
+import 'package:answer_me_app/core/usecases/usecase.dart';
 import 'package:answer_me_app/features/authentication/domain/repositories/user_repository_interface.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 
-class Register {
+class Register implements UseCase<Response, Params> {
   final UserRepositoryInterface userRepository;
   Register(this.userRepository);
 
-  Future<Either<RemoteClientException, Response>> execute({
-    required String name,
-    required String email,
-    required String password,
-  }) async {
+  @override
+  Future<Response> call(Params params) async {
     final Either<RemoteClientException, Response> response =
         await userRepository.register(
-      name: name,
-      email: email,
-      password: password,
+      name: params.name,
+      email: params.email,
+      password: params.password,
     );
 
     if (response.isLeft()) {
@@ -30,6 +28,18 @@ class Register {
     userRepository.writeTokenOnLocalStorage(responseValue!.body['token']);
     userRepository.writeUserOnLocalStorage(responseValue.body['usr']);
 
-    return response;
+    return responseValue;
   }
+}
+
+class Params {
+  late final String name;
+  late final String email;
+  late final String password;
+
+  Params({
+    required String name,
+    required String email,
+    required String password,
+  });
 }

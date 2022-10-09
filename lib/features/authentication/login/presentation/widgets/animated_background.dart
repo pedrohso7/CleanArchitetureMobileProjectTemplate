@@ -1,6 +1,5 @@
 import 'package:answer_me_app/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class AnimatedBackground extends StatelessWidget {
   final bool startAnimation;
