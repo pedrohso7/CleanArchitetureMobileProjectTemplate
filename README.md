@@ -1,5 +1,6 @@
 
 ![❂_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/194926761-cde35a20-dce5-401c-8665-43ae0392fb5c.png)
+
 [![GitHub forks](https://img.shields.io/github/forks/pedrohso7/mobileCleanProjectTemplate)](https://github.com/pedrohso7/mobileCleanProjectTemplate/network)
 
 #Overview
@@ -40,13 +41,8 @@
 
 #The project
 
-##In this template was implemented register, login and splash features and the views below:
-###Splash
-![Screenshot_20221010-151814](https://user-images.githubusercontent.com/32853995/194957946-f535df7c-7659-4af1-830c-05ad4d55ee50.png)
-###Login
-![Screenshot_20221010-151705](https://user-images.githubusercontent.com/32853995/194957972-60fbb7e6-0667-4e6b-9570-730d5a51bc56.png)
-###Register
-![Screenshot_20221010-151710](https://user-images.githubusercontent.com/32853995/194958005-a07e5648-d03b-41c3-9b19-afd9a425ad86.png)
+##In this template was implemented register, login and splash features. The views images in the link below:
+https://drive.google.com/drive/folders/1SuoO8fbr2NsEKtdgjMFPRyITUlQrue9X?usp=sharing
 
 
 
