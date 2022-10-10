@@ -1,4 +1,5 @@
 import 'package:answer_me_app/core/constants/color_constants.dart';
+import 'package:answer_me_app/core/constants/image_path_constants.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedBackground extends StatelessWidget {
@@ -39,7 +40,7 @@ class AnimatedBackground extends StatelessWidget {
             child: Transform.scale(
               scale: 0.7,
               child: Image.asset(
-                'lib/assets/images/brain.png',
+                ImagePathConstants.BRAIN_LOGO_PATH,
               ),
             ),
           ),

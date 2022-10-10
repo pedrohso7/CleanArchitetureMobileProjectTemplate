@@ -1,3 +1,4 @@
+import 'package:answer_me_app/core/constants/image_path_constants.dart';
 import 'package:answer_me_app/features/splash/presentation/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class SplashPage extends GetView<SplashController> {
           child: ClipOval(
             child: Material(
               color: Colors.white,
-              child: Image.asset('lib/assets/images/brain.png'),
+              child: Image.asset(ImagePathConstants.BRAIN_LOGO_PATH),
             ),
           ),
         ),
