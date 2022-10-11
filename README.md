@@ -1,7 +1,6 @@
 ![✪_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/195160163-43688868-03d8-41cb-8dc9-50f03d52ab14.png)
-<div align="center">    
+
 [![GitHub forks](https://img.shields.io/github/forks/pedrohso7/mobileCleanProjectTemplate)](https://github.com/pedrohso7/mobileCleanProjectTemplate/network)
-</div>
 
 <p align="center">
   <a href="#-project">Project</a>
@@ -81,11 +80,9 @@ It is coincidence? jaja!!
 The following images are from the authentication and splash features
 </p>
 
-<p align="center">  
-    <img alt="Tela 1" title="App" src="lib/assets/readme/splash_page.png" width="30%"/>
-    <img alt="Tela 2" title="App" src="lib/assets/readme/login_page.png" width="30%"/>
-    <img alt="Tela 3" title="App" src="lib/assets/readme/register_page.png" width="30%"/>
-</p>
+<img alt="Tela 1" title="App" src="lib/assets/readme/splash_page.png" width="30%"/>
+<img alt="Tela 2" title="App" src="lib/assets/readme/login_page.png" width="30%"/>
+<img alt="Tela 3" title="App" src="lib/assets/readme/register_page.png" width="30%"/>
 
 ---
 <p align="justify">
