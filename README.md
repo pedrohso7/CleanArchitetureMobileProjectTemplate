@@ -1,7 +1,9 @@
 ![✪_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/195160163-43688868-03d8-41cb-8dc9-50f03d52ab14.png)
 
+<p align="center">
 [![GitHub forks](https://img.shields.io/github/forks/pedrohso7/mobileCleanProjectTemplate)](https://github.com/pedrohso7/mobileCleanProjectTemplate/network)
-
+</p>
+          
 <p align="center">
   <a href="#-project">Project</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -81,9 +83,9 @@ The following images are from the authentication and splash features
 </p>
 
 <p align="middle">
-<img alt="Tela 1" title="App" src="lib/assets/readme/splash_page.png" width="100%"/>
-<img alt="Tela 2" title="App" src="lib/assets/readme/login_page.png" width="100%"/>
-<img alt="Tela 3" title="App" src="lib/assets/readme/register_page.png" width="100%"/>
+<img alt="Tela 1" title="App" src="lib/assets/images/readme/splash_page.png" width="100%"/>
+<img alt="Tela 2" title="App" src="lib/assets/images/readme/login_page.png" width="100%"/>
+<img alt="Tela 3" title="App" src="lib/assets/images/readme/register_page.png" width="100%"/>
 </p>
 ---
 <p align="justify">
