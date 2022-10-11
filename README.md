@@ -39,7 +39,7 @@ This repository was created to be a mobile project that uses the Reso Coder's Fl
 </p>
 
 
-<h2>Presentation</h2>
+<h4>Presentation</h4>
 
 <p align="justify">
 The above diagram explain how each elements work and the call stack flow. Anyway, in the top of the flow, we have the presentation layer that is responsable for get and show data information from/to users through UI/UX. 
@@ -52,7 +52,7 @@ In this project, each view have your own GetXController that manage all states a
 
 ![getx_controller](https://user-images.githubusercontent.com/32853995/194935614-da1a0060-40f6-4e13-9815-c3a9c07d4c01.png)
 
-<h2>Domain</h2>
+<h4>Domain</h4>
 
 <p align="justify">
 Under the presentation layer we've the domain layer, responsable for contain our usecases, entities and repositories. But, of course, our presentation can only "see" the usecases. The usecases in turn can use repositories and entities (but without known what is implemented, just as contracts, it keeps our project clean.) futhermore is responsable for contain our core logic to their own context. The entities are an abstract representation of our objects. The repositories are at the same time on the domain layer and data layer but, in the domain, we just implement the contract, it defines the repository interface that should be used by usecases.
@@ -64,19 +64,19 @@ Under the presentation layer we've the domain layer, responsable for contain our
 The data layer is composed for all data fetch mechanisms as repositories, view models, local and remote datasources. The repository in this layer have to implement the domain interface and override the previously declared functions and decide when to use the remote and local datasource and return or a failure or the result. Our view models extends our entities and implement parser functions like Json to Object, it helps to return always what we want from repositories. Finally, our datasources fetch the data, in other words, we explicity do the requisitions from cache or remote client and return the result or throw an error.
 </p>
 
-<h2>Core</h2>
+<h4>Core</h4>
 
 <p align="justify">
 Besides the features, I created a core path that contains all shared content between features as errors, mixins, routes and common widgets.
 </p>
 
-<h2>Dependency Injection</h2>
+<h4>Dependency Injection</h4>
 
 <p align="justify">
 The dependency injection follows the diagram, in other words, datasources are injected on repositories, repositories are injected on usecases and usecases are injected on the presentation controller. GetX made it easy, fortunately.
 </p>
 
-<h2>Feature example (Splash)</h2>
+<h4>Feature example (Splash)</h4>
 <p align="justify">
 It is coincidence? jaja!!
 </p>
