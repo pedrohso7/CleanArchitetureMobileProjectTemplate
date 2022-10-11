@@ -58,7 +58,7 @@ In this project, each view have your own GetXController that manage all states a
 Under the presentation layer we've the domain layer, responsable for contain our usecases, entities and repositories. But, of course, our presentation can only "see" the usecases. The usecases in turn can use repositories and entities (but without known what is implemented, just as contracts, it keeps our project clean.) futhermore is responsable for contain our core logic to their own context. The entities are an abstract representation of our objects. The repositories are at the same time on the domain layer and data layer but, in the domain, we just implement the contract, it defines the repository interface that should be used by usecases.
 </p>
 
-<h2>Data</h2>
+<h4>Data</h4>
 
 <p align="justify">
 The data layer is composed for all data fetch mechanisms as repositories, view models, local and remote datasources. The repository in this layer have to implement the domain interface and override the previously declared functions and decide when to use the remote and local datasource and return or a failure or the result. Our view models extends our entities and implement parser functions like Json to Object, it helps to return always what we want from repositories. Finally, our datasources fetch the data, in other words, we explicity do the requisitions from cache or remote client and return the result or throw an error.
