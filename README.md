@@ -1,6 +1,7 @@
 ![✪_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/195160163-43688868-03d8-41cb-8dc9-50f03d52ab14.png)
 
 <div align="center">
+          
 [![GitHub forks](https://img.shields.io/github/forks/pedrohso7/mobileCleanProjectTemplate)](https://github.com/pedrohso7/mobileCleanProjectTemplate/network)
 </div>
           
@@ -34,7 +35,7 @@ This repository was created to be a mobile project that uses the Reso Coder's Fl
 </p>
 
 <p align="middle">
-![clean_diagram](https://user-images.githubusercontent.com/32853995/194931703-4ba7e856-fe0f-4a4f-b3d8-04372c3a4441.png)
+<img alt="Splash View" title="App" src="https://user-images.githubusercontent.com/32853995/194931703-4ba7e856-fe0f-4a4f-b3d8-04372c3a4441.png" width="300"/>
 </p>
 
 
