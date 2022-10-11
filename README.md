@@ -1,6 +1,5 @@
-<h1 align="center">
-   ![❂_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/194926761-cde35a20-dce5-401c-8665-43ae0392fb5c.png)
-    
+![❂_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/194926761-cde35a20-dce5-401c-8665-43ae0392fb5c.png)
+<h1 align="center">    
 [![GitHub forks](https://img.shields.io/github/forks/pedrohso7/mobileCleanProjectTemplate)](https://github.com/pedrohso7/mobileCleanProjectTemplate/network)
 </h1>
 
