@@ -79,13 +79,13 @@ It is coincidence? jaja!!
 
 ## ✦ Implemented Views
 <p align="justify">
-The following images are from the authentication and splash features
+The following images are from the authentication and splash features:
 </p>
 
 <p align="middle">
-<img alt="Tela 1" title="App" src="lib/assets/images/readme/splash_page.png" width="100%"/>
-<img alt="Tela 2" title="App" src="lib/assets/images/readme/login_page.png" width="100%"/>
-<img alt="Tela 3" title="App" src="lib/assets/images/readme/register_page.png" width="100%"/>
+<img alt="Tela 1" title="App" src="lib/assets/images/readme/splash_page.png" width="100"/>
+<img alt="Tela 2" title="App" src="lib/assets/images/readme/login_page.png" width="100"/>
+<img alt="Tela 3" title="App" src="lib/assets/images/readme/register_page.png" width="100"/>
 </p>
 ---
 <p align="justify">
