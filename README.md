@@ -81,7 +81,9 @@ The dependency injection follows the diagram, in other words, datasources are in
 It is coincidence? jaja!!
 </p>
 
-![splash_feature](https://user-images.githubusercontent.com/32853995/194959994-3e9ae1da-b1e6-45dc-ba18-f055387069a6.png)
+<p align="middle">
+<img alt="Splash View" title="App" src="https://user-images.githubusercontent.com/32853995/194959994-3e9ae1da-b1e6-45dc-ba18-f055387069a6.png" width="300"/>
+</p>
 
 ## ✦ Implemented Views
 <p align="justify">
@@ -89,9 +91,9 @@ The following images are from the authentication and splash features:
 </p>
 
 <p align="middle">
-<img alt="Splash View" title="App" src="lib/assets/images/readme/splash_page.png" width="300"/>
-<img alt="Login View" title="App" src="lib/assets/images/readme/login_page.png" width="300"/>
-<img alt="Register View" title="App" src="lib/assets/images/readme/register_page.png" width="300"/>
+<img alt="Splash View" title="App" src="lib/assets/images/readme/splash_page.png" width="250"/>
+<img alt="Login View" title="App" src="lib/assets/images/readme/login_page.png" width="250"/>
+<img alt="Register View" title="App" src="lib/assets/images/readme/register_page.png" width="250"/>
 </p>
 
 ## ✦ Usage
