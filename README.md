@@ -82,7 +82,7 @@ It is coincidence? jaja!!
 </p>
 
 <p align="middle">
-<img alt="Splash View" title="App" src="https://user-images.githubusercontent.com/32853995/194959994-3e9ae1da-b1e6-45dc-ba18-f055387069a6.png" width="300"/>
+<img alt="Splash View" title="App" src="https://user-images.githubusercontent.com/32853995/194959994-3e9ae1da-b1e6-45dc-ba18-f055387069a6.png" width="200"/>
 </p>
 
 ## ✦ Implemented Views
