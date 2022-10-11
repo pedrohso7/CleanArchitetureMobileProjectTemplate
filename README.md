@@ -20,8 +20,8 @@ This repository was created to be a mobile project that uses the Reso Coder's Fl
 
 ## ✦ Technologies
 Esse projeto foi desenvolvido com as seguintes tecnologias:
-- [Flutter]([https://flask.palletsprojects.com/en/1.1.x/](https://flutter.dev/))
-- [Dart]([https://getbootstrap.com/](https://dart.dev/))
+- [Flutter](https://flutter.dev/)
+- [Dart](https://dart.dev/)
 - [Dartz](https://pub.dev/packages/dartz)
 - [GetX](https://pub.dev/packages/get)
 
@@ -82,9 +82,9 @@ The following images are from the authentication and splash features
 </p>
 
 <p align="center">  
-    <img alt="Tela 1" title="App" src="lib/assets/readme/splash_page.png" width="70%"/>
-    <img alt="Tela 2" title="App" src="lib/assets/readme/login_page.png" width="70%"/>
-    <img alt="Tela 3" title="App" src="lib/assets/readme/register_page.png" width="70%"/>
+    <img alt="Tela 1" title="App" src="lib/assets/readme/splash_page.png" width="30%"/>
+    <img alt="Tela 2" title="App" src="lib/assets/readme/login_page.png" width="30%"/>
+    <img alt="Tela 3" title="App" src="lib/assets/readme/register_page.png" width="30%"/>
 </p>
 
 ---
