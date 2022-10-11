@@ -80,10 +80,11 @@ It is coincidence? jaja!!
 The following images are from the authentication and splash features
 </p>
 
-<img alt="Tela 1" title="App" src="lib/assets/readme/splash_page.png" width="30%"/>
-<img alt="Tela 2" title="App" src="lib/assets/readme/login_page.png" width="30%"/>
-<img alt="Tela 3" title="App" src="lib/assets/readme/register_page.png" width="30%"/>
-
+<p align="middle">
+<img alt="Tela 1" title="App" src="lib/assets/readme/splash_page.png" width="100%"/>
+<img alt="Tela 2" title="App" src="lib/assets/readme/login_page.png" width="100%"/>
+<img alt="Tela 3" title="App" src="lib/assets/readme/register_page.png" width="100%"/>
+</p>
 ---
 <p align="justify">
 Just fork it.
