@@ -35,7 +35,7 @@ This repository was created to be a mobile project that uses the Reso Coder's Fl
 </p>
 
 <p align="middle">
-<img alt="Splash View" title="App" src="https://user-images.githubusercontent.com/32853995/194931703-4ba7e856-fe0f-4a4f-b3d8-04372c3a4441.png" width="300"/>
+<img alt="Splash View" title="App" src="https://user-images.githubusercontent.com/32853995/194931703-4ba7e856-fe0f-4a4f-b3d8-04372c3a4441.png" width="500"/>
 </p>
 
 
