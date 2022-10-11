@@ -33,7 +33,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 This repository was created to be a mobile project that uses the Reso Coder's Flutter Clean Architecture Proposal™ with GetX support to make an project with authentication features and good practices as the clean code, SOLID and conventional commits. This project must be a base for my future projects.
 </p>
 
+<p align="middle">
 ![clean_diagram](https://user-images.githubusercontent.com/32853995/194931703-4ba7e856-fe0f-4a4f-b3d8-04372c3a4441.png)
+</p>
+
 
 <h2>Presentation</h2>
 
@@ -92,7 +95,7 @@ The following images are from the authentication and splash features:
 
 ## ✦ Usage
 <p align="justify">
-To start using this template, make sure you have an API to use but if you want to start testing right now, i made a test Node Api [here]([https://pub.dev/packages/get](https://github.com/pedrohso7/apiTestAuthentication)) that you can clone, configure and use to test.
+To start using this template, make sure you have an API to use but if you want to start testing right now, i made a test Node Api [here](https://github.com/pedrohso7/apiTestAuthentication) that you can clone, configure and use to test.
 </p>
 
 <p align="justify">
