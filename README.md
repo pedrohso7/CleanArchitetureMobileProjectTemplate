@@ -1,6 +1,7 @@
 <h1 align="center">
-    ![❂_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/194926761-cde35a20-dce5-401c-8665-43ae0392fb5c.png) </br>
-    [![GitHub forks](https://img.shields.io/github/forks/pedrohso7/mobileCleanProjectTemplate)](https://github.com/pedrohso7/mobileCleanProjectTemplate/network)
+   ![❂_Clean_Architeture_Mobile_Project](https://user-images.githubusercontent.com/32853995/194926761-cde35a20-dce5-401c-8665-43ae0392fb5c.png)
+    
+[![GitHub forks](https://img.shields.io/github/forks/pedrohso7/mobileCleanProjectTemplate)](https://github.com/pedrohso7/mobileCleanProjectTemplate/network)
 </h1>
 
 <p align="center">
@@ -82,9 +83,9 @@ The following images are from the authentication and splash features
 </p>
 
 <p align="center">  
-  ![Screenshot_20221010-151814](https://user-images.githubusercontent.com/32853995/195144009-9a232e94-518d-460f-a138-5ccef6c3751f.png)
-  ![Screenshot_20221010-151705](https://user-images.githubusercontent.com/32853995/195144060-87861152-43b9-4c04-b32c-2ef71a809aef.png)
-  ![Screenshot_20221010-151710](https://user-images.githubusercontent.com/32853995/195144076-990a51c9-1cfe-4df2-8bbc-a157b00f051e.png)
+    <img alt="Tela 1" title="App" src="lib/assets/assets/readme/splash_page.png" width="70%"/>
+    <img alt="Tela 2" title="App" src="lib/assets/assets/readme/login_page.png" width="70%"/>
+    <img alt="Tela 3" title="App" src="lib/assets/assets/readme/register_page.png" width="70%"/>
 </p>
 
 ---
