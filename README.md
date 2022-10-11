@@ -12,6 +12,8 @@
   <a href="#-overview">Overview</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-implemented-views">Implemented Views</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-usage">Usage</a>
 </p>
 
 ## ✦ Project
@@ -83,11 +85,46 @@ The following images are from the authentication and splash features:
 </p>
 
 <p align="middle">
-<img alt="Tela 1" title="App" src="lib/assets/images/readme/splash_page.png" width="300"/>
-<img alt="Tela 2" title="App" src="lib/assets/images/readme/login_page.png" width="300"/>
-<img alt="Tela 3" title="App" src="lib/assets/images/readme/register_page.png" width="300"/>
+<img alt="Splash View" title="App" src="lib/assets/images/readme/splash_page.png" width="300"/>
+<img alt="Login View" title="App" src="lib/assets/images/readme/login_page.png" width="300"/>
+<img alt="Register View" title="App" src="lib/assets/images/readme/register_page.png" width="300"/>
 </p>
----
+
+## ✦ Usage
+<p align="justify">
+To start using this template, make sure you have an API to use but if you want to start testing right now, i made a test Node Api [here]([https://pub.dev/packages/get](https://github.com/pedrohso7/apiTestAuthentication)) that you can clone, configure and use to test.
+</p>
+
+<p align="justify">
+Once you have an API running, you have to create your .env file on root path following .env.example and then you're prepare to run the app.
+</p>
+
+<p align="justify">
+Make sure you're on the root path and run:
+</p>
+
+```
+flutter pub get
+```
+
+<p align="justify">
+To get dependencies and run using:
+</p>
+
+```
+flutter run
+```
+
+<p align="justify">
+Instead this you can generate your apk build and run in your own device with:
+</p>
+
+```
+flutter build apk
+```
+
+## ✦ Start to use
+
 <p align="justify">
 Just fork it.
 </p>
