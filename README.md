@@ -99,7 +99,7 @@ The following images are from the authentication and splash features:
 ## ✦ Usage
 <p align="justify">
 To start using this template, make sure you have an API to use but if you want to start testing right now, i made a test Node Api  
-[Flutter](https://github.com/pedrohso7/apiTestAuthentication) that you can clone, configure and use to test.
+<a href="https://github.com/pedrohso7/apiTestAuthentication">here</p> that you can clone, configure and use to test.
 </p>
 
 <p align="justify">
