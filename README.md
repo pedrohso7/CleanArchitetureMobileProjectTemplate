@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## ✦ Overview
 <p align="justify">
-This repository was created to be a mobile project that uses the Reso Coder's Flutter Clean Architecture Proposal™ with GetX support to make an project with authentication features and good practices as the clean code, SOLID and conventional commits. This project must be a base for my future projects.
+This project promise you a good start to make your own app. The following content explains how this app was structured.
 </p>
 
 <p align="middle">
