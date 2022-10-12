@@ -23,7 +23,7 @@ This repository was created to be a mobile project that uses the Reso Coder's Fl
 </p>
 
 ## ✦ Technologies
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was made using the tecnologies below:
 - [Flutter](https://flutter.dev/)
 - [Dart](https://dart.dev/)
 - [Dartz](https://pub.dev/packages/dartz)
