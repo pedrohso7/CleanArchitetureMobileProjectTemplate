@@ -18,6 +18,7 @@ dependencies:
     sdk: flutter
   material_design_icons_flutter: ^5.0.6996
   dartz: ^0.10.1
+  flutter_dotenv: ^5.0.2
   
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - lib/assets/images/brain.png
 
   # To add custom fonts to your application, add a fonts section here,

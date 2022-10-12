@@ -4,6 +4,7 @@ import 'package:answer_me_app/core/routes/home_routes.dart';
 import 'package:answer_me_app/core/routes/splash_routes.dart';
 import 'package:answer_me_app/core/themes/default_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -12,6 +13,8 @@ void main() async {
   await Future.delayed(const Duration(milliseconds: 5000), () {
     debugPrint('teste');
   });
+
+  await dotenv.load(fileName: ".env");
 
   await GetStorage.init();
 
