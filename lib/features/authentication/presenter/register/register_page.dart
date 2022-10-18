@@ -1,11 +1,11 @@
 import 'package:answer_me_app/core/widgets/default_back_page_widget.dart';
 import 'package:answer_me_app/core/widgets/default_button.dart';
-import 'package:answer_me_app/features/authentication/register/presentation/widgets/register_password_textinput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'register_controller.dart';
+import 'widgets/register_password_textinput.dart';
 import 'widgets/register_textinput.dart';
 
 class RegisterPage extends GetView<RegisterController> {
