@@ -8,13 +8,17 @@ class SplashController extends GetxController with LoaderMixin {
   SplashController({required UseCase isUserLoggedUsecase})
       : _isUserLoggedUsecase = isUserLoggedUsecase;
 
-  void redirect() async {
-    await Future.delayed(const Duration(seconds: 2), () async {
-      if (await _isUserLoggedUsecase.call(NoParams())) {
-        await Get.offNamed('/home');
-        return;
-      }
-      await Get.offNamed('/auth/login');
-    });
+  Future<void> redirect() async {
+    if (await _isUserLoggedUsecase.call(NoParams())) {
+      await Get.offNamed('/home');
+      return;
+    }
+    await Get.offNamed('/auth/login');
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    Future.delayed(const Duration(seconds: 2), () async => await redirect());
   }
 }

@@ -7,7 +7,6 @@ class SplashPage extends GetView<SplashController> {
   const SplashPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    controller.redirect();
     return Scaffold(
       backgroundColor: context.theme.primaryColor,
       body: Center(

@@ -31,11 +31,11 @@ class LoginController extends GetxController
   void onInit() {
     super.onInit();
     Future.delayed(const Duration(milliseconds: 2680), () {
-      showModalPage.value = true;
+      showModalPage.toggle();
     });
 
     Future.delayed(const Duration(milliseconds: 1500), () {
-      showBlueBackground.value = true;
+      showBlueBackground.toggle();
     });
   }
 

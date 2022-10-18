@@ -69,8 +69,8 @@ class RegisterPage extends GetView<RegisterController> {
                       const SizedBox(height: 25),
                       Obx(() {
                         return RegisterPasswordTextInput(
-                          onTapRightIcon: () => controller.isPasswordVisible
-                              .value = !(controller.isPasswordVisible.value),
+                          onTapRightIcon: () =>
+                              controller.isPasswordVisible.toggle(),
                           controller: controller.passwordEC,
                           isPasswordVisible: controller.isPasswordVisible.value,
                           validator: (val) =>
@@ -80,9 +80,8 @@ class RegisterPage extends GetView<RegisterController> {
                       const SizedBox(height: 25),
                       Obx(() {
                         return RegisterPasswordTextInput(
-                          onTapRightIcon: () => controller
-                              .isPasswordConfirmationVisible
-                              .value = !(controller.isPasswordVisible.value),
+                          onTapRightIcon: () =>
+                              controller.isPasswordConfirmationVisible.toggle(),
                           controller: controller.passwordConfirmationEC,
                           label: 'Confirme sua senha',
                           isPasswordVisible:
