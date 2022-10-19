@@ -1,41 +1,36 @@
-import 'package:answer_me_app/core/errors/local_storage_exception.dart';
 import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:answer_me_app/core/usecases/usecase.dart';
 import 'package:dartz/dartz.dart';
 
-import '../entities/user.dart';
 import '../repositories/splash_repository_interface.dart';
 
-class IsUserLogged implements UseCase<bool, NoParams> {
+class IsUserLogged implements UseCase<Future<bool>, IsUserLoggedParams> {
   final SplashRepositoryInterface splashRepository;
   IsUserLogged(this.splashRepository);
 
   @override
-  Future<bool> call(NoParams params) async {
-    final Either<LocalStorageException, String> token =
-        splashRepository.getTokenFromLocalStorage();
-
-    if (token.isLeft()) {
-      return false;
-    }
-
-    late final String? tokenValue = token.fold((l) => null, (r) => r);
-
-    final Either<LocalStorageException, User> user =
-        splashRepository.getUserFromLocalStorage();
-
-    if (user.isLeft()) {
-      return false;
-    }
-
-    final User? userValue = user.fold((l) => null, (r) => r);
-
-    final Either<RemoteClientException, bool> isUserTokenValid =
+  Future<bool> call(IsUserLoggedParams params) async {
+    final Either<RemoteClientException, bool> response =
         await splashRepository.isUserTokenValid(
-      token: tokenValue!,
-      userId: userValue!.id,
+      token: params.token,
+      userId: params.userId,
     );
 
-    return isUserTokenValid.fold((l) => false, (r) => r);
+    if (response.isLeft()) {
+      final RemoteClientException? exception =
+          response.fold((l) => l, (r) => null);
+      throw exception!;
+    }
+
+    return response.fold((l) => false, (r) => r);
   }
+}
+
+class IsUserLoggedParams {
+  late final String token;
+  late final String userId;
+  IsUserLoggedParams({
+    required this.token,
+    required this.userId,
+  });
 }

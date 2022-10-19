@@ -1,3 +1,5 @@
+import 'package:answer_me_app/features/splash/domain/usecases/get_token_from_local_storage.dart';
+import 'package:answer_me_app/features/splash/domain/usecases/get_user_from_local_storage.dart';
 import 'package:get/get.dart';
 import '../data/datasources/splash_local_datasource.dart';
 import '../data/datasources/splash_remote_datasource.dart';
@@ -29,8 +31,18 @@ class SplashBindings implements Bindings {
     );
 
     Get.lazyPut(
+      () => GetUserFromLocalStorage(Get.find()),
+    );
+
+    Get.lazyPut(
+      () => GetTokenFromLocalStorage(Get.find()),
+    );
+
+    Get.lazyPut(
       () => SplashController(
         isUserLoggedUsecase: Get.find(),
+        getTokenFromLocalStorage: Get.find(),
+        getUserFromLocalStorage: Get.find(),
       ),
     );
   }
