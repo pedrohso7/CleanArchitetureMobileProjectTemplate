@@ -23,7 +23,7 @@ This repository was created to be a mobile project that uses the Reso Coder's Fl
 </p>
 
 ## ✦ Technologies
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was made using the tecnologies below:
 - [Flutter](https://flutter.dev/)
 - [Dart](https://dart.dev/)
 - [Dartz](https://pub.dev/packages/dartz)
@@ -98,7 +98,8 @@ The following images are from the authentication and splash features:
 
 ## ✦ Usage
 <p align="justify">
-To start using this template, make sure you have an API to use but if you want to start testing right now, i made a test Node Api [here](https://github.com/pedrohso7/apiTestAuthentication) that you can clone, configure and use to test.
+To start using this template, make sure you have an API to use but if you want to start testing right now, i made a test Node Api  
+<a href="https://github.com/pedrohso7/apiTestAuthentication">here</p> that you can clone, configure and use to test.
 </p>
 
 <p align="justify">
