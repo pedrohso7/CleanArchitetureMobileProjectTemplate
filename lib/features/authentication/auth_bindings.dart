@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 import 'data/datasources/auth_local_datasource.dart';
 import 'data/datasources/auth_remote_datasource.dart';
-import 'data/repositories/user_repository.dart';
-import 'domain/repositories/user_repository_interface.dart';
+import 'data/repositories/auth_repository.dart';
+import 'domain/repositories/auth_repository_interface.dart';
 
 class AuthBindings implements Bindings {
   @override
@@ -21,8 +21,8 @@ class AuthBindings implements Bindings {
       ),
     );
 
-    Get.lazyPut<UserRepositoryInterface>(
-      () => UserRepository(
+    Get.lazyPut<AuthRepositoryInterface>(
+      () => AuthRepository(
         remoteDataSource: Get.find(),
         localDataSource: Get.find(),
       ),

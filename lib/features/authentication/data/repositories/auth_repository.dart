@@ -2,15 +2,15 @@ import 'package:answer_me_app/core/errors/local_storage_exception.dart';
 import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
-import '../../domain/repositories/user_repository_interface.dart';
+import '../../domain/repositories/auth_repository_interface.dart';
 import '../datasources/auth_local_datasource.dart';
 import '../datasources/auth_remote_datasource.dart';
 
-class UserRepository implements UserRepositoryInterface {
+class AuthRepository implements AuthRepositoryInterface {
   final AuthRemoteDataSourceInterface remoteDataSource;
   final AuthLocalDataSourceInterface localDataSource;
 
-  UserRepository({
+  AuthRepository({
     required this.remoteDataSource,
     required this.localDataSource,
   });
@@ -48,7 +48,8 @@ class UserRepository implements UserRepositoryInterface {
   }
 
   @override
-  Either<LocalStorageException, void> writeUserOnLocalStorage(Map user) {
+  Either<LocalStorageException, void> writeUserOnLocalStorage(
+      {required Map user}) {
     try {
       return Right(localDataSource.writeUserOnLocalStorage(user));
     } on LocalStorageException catch (e) {
@@ -57,7 +58,8 @@ class UserRepository implements UserRepositoryInterface {
   }
 
   @override
-  Either<LocalStorageException, void> writeTokenOnLocalStorage(String token) {
+  Either<LocalStorageException, void> writeTokenOnLocalStorage(
+      {required String token}) {
     try {
       return Right(localDataSource.writeTokenOnLocalStorage(token));
     } on LocalStorageException catch (e) {

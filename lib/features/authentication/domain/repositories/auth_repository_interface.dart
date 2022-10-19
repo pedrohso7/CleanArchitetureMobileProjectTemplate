@@ -3,7 +3,7 @@ import 'package:answer_me_app/core/errors/remote_client_exception.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 
-abstract class UserRepositoryInterface {
+abstract class AuthRepositoryInterface {
   Future<Either<RemoteClientException, Response>> register({
     required String name,
     required String email,
@@ -13,6 +13,8 @@ abstract class UserRepositoryInterface {
     required String email,
     required String password,
   });
-  Either<LocalStorageException, void> writeUserOnLocalStorage(Map user);
-  Either<LocalStorageException, void> writeTokenOnLocalStorage(String token);
+  Either<LocalStorageException, void> writeUserOnLocalStorage(
+      {required Map user});
+  Either<LocalStorageException, void> writeTokenOnLocalStorage(
+      {required String token});
 }
