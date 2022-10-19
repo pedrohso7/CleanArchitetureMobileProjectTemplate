@@ -4,12 +4,12 @@ import 'package:answer_me_app/features/authentication/domain/repositories/auth_r
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 
-class Register implements UseCase<Response, Params> {
+class Register implements UseCase<Future<Response>, RegisterParams> {
   final AuthRepositoryInterface authRepository;
   Register(this.authRepository);
 
   @override
-  Future<Response> call(Params params) async {
+  Future<Response> call(RegisterParams params) async {
     final Either<RemoteClientException, Response> response =
         await authRepository.register(
       name: params.name,
@@ -29,12 +29,12 @@ class Register implements UseCase<Response, Params> {
   }
 }
 
-class Params {
+class RegisterParams {
   late final String name;
   late final String email;
   late final String password;
 
-  Params({
+  RegisterParams({
     required String name,
     required String email,
     required String password,

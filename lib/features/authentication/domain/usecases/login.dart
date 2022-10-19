@@ -4,7 +4,7 @@ import 'package:answer_me_app/features/authentication/domain/repositories/auth_r
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 
-class Login implements UseCase<Response, LoginParams> {
+class Login implements UseCase<Future<Response>, LoginParams> {
   final AuthRepositoryInterface authRepository;
   Login(this.authRepository);
 

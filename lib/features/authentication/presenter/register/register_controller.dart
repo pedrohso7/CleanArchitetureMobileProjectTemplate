@@ -63,7 +63,7 @@ class RegisterController extends GetxController
   }
 
   Future<void> register() async {
-    final Response response = await _registerUsecase.call(Params(
+    final Response response = await _registerUsecase.call(RegisterParams(
       name: nameEC.text,
       email: emailEC.text,
       password: passwordEC.text,
