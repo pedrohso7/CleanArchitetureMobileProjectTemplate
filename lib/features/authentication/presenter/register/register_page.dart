@@ -24,7 +24,7 @@ class RegisterPage extends GetView<RegisterController> {
             children: [
               DefaultBackPageWidget(
                 title: '',
-                onTapBack: () async => await controller.onTapBack(),
+                onTap: () async => await controller.handleTapBackEvent(),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
