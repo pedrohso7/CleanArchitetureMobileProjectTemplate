@@ -72,21 +72,21 @@ class LoginController extends GetxController
   }
 
   Future<void> login() async {
-    final Response loginResponse = await _loginUsecase.call(LoginParams(
+    final Response response = await _loginUsecase.call(LoginParams(
       email: emailEC.text,
       password: passwordEC.text,
     ));
 
     _writeTokenOnLocalStorage.call(WTOLSParams(
-      token: loginResponse.body['token'],
+      token: response.body['token'],
     ));
 
     _writeUserOnLocalStorage.call(WUOLSParams(
-      user: loginResponse.body['usr'],
+      user: response.body['usr'],
     ));
   }
 
-  void nextField(String value, FocusNode focusNode) {
+  void handleNextFieldEvent(String value, FocusNode focusNode) {
     if (value.length == 1) {
       focusNode.requestFocus();
     }

@@ -3,11 +3,11 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 class DefaultBackPageWidget extends StatelessWidget {
   final String title;
-  final VoidCallback onTapBack;
+  final VoidCallback onTap;
   const DefaultBackPageWidget({
     Key? key,
     required this.title,
-    required this.onTapBack,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -24,7 +24,7 @@ class DefaultBackPageWidget extends StatelessWidget {
             child: InkWell(
               // radius: 32,
               borderRadius: BorderRadius.circular(50),
-              onTap: onTapBack,
+              onTap: onTap,
               child: const Icon(
                 MdiIcons.chevronLeft,
                 color: Colors.black54,
