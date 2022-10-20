@@ -22,14 +22,14 @@ class RegisterController extends GetxController
   final RxBool isPasswordVisible = false.obs;
   final RxBool isPasswordConfirmationVisible = false.obs;
 
-  final UseCase _registerUsecase;
-  final UseCase _writeTokenOnLocalStorage;
-  final UseCase _writeUserOnLocalStorage;
+  final UseCase<Future<Response>, RegisterParams> _registerUsecase;
+  final UseCase<void, WTOLSParams> _writeTokenOnLocalStorage;
+  final UseCase<void, WUOLSParams> _writeUserOnLocalStorage;
 
   RegisterController({
-    required UseCase registerUsecase,
-    required UseCase writeTokenOnLocalStorage,
-    required UseCase writeUserOnLocalStorage,
+    required UseCase<Future<Response>, RegisterParams> registerUsecase,
+    required UseCase<void, WTOLSParams> writeTokenOnLocalStorage,
+    required UseCase<void, WUOLSParams> writeUserOnLocalStorage,
   })  : _registerUsecase = registerUsecase,
         _writeTokenOnLocalStorage = writeTokenOnLocalStorage,
         _writeUserOnLocalStorage = writeUserOnLocalStorage;

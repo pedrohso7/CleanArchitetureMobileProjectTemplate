@@ -7,6 +7,10 @@ class SplashPage extends GetView<SplashController> {
   const SplashPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Future.delayed(
+      const Duration(seconds: 2),
+      () async => await controller.handleFirstRedirect(),
+    );
     return Scaffold(
       backgroundColor: context.theme.primaryColor,
       body: Center(

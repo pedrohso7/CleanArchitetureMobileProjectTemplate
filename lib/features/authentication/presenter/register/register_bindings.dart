@@ -1,3 +1,4 @@
+import 'package:answer_me_app/core/usecases/usecase.dart';
 import 'package:get/get.dart';
 import '../../domain/usecases/register.dart';
 import '../../domain/usecases/write_token_on_local_storage.dart';
@@ -8,19 +9,19 @@ class RegisterBindings implements Bindings {
   @override
   void dependencies() {
     //Usecases and ViewController
-    Get.lazyPut(
+    Get.lazyPut<UseCase<Future<Response>, RegisterParams>>(
       () => Register(Get.find()),
     );
 
-    Get.lazyPut(
+    Get.lazyPut<UseCase<void, WTOLSParams>>(
       () => WriteTokenOnLocalStorage(Get.find()),
     );
 
-    Get.lazyPut(
+    Get.lazyPut<UseCase<void, WUOLSParams>>(
       () => WriteUserOnLocalStorage(Get.find()),
     );
 
-    Get.lazyPut(
+    Get.lazyPut<GetxController>(
       () => RegisterController(
         registerUsecase: Get.find(),
         writeTokenOnLocalStorage: Get.find(),

@@ -21,14 +21,14 @@ class LoginController extends GetxController
   final TextEditingController passwordEC = TextEditingController();
   final RxBool isPasswordVisible = false.obs;
 
-  final UseCase _loginUsecase;
-  final UseCase _writeTokenOnLocalStorage;
-  final UseCase _writeUserOnLocalStorage;
+  final UseCase<Future<Response>, LoginParams> _loginUsecase;
+  final UseCase<void, WTOLSParams> _writeTokenOnLocalStorage;
+  final UseCase<void, WUOLSParams> _writeUserOnLocalStorage;
 
   LoginController({
-    required UseCase loginUsecase,
-    required UseCase writeTokenOnLocalStorage,
-    required UseCase writeUserOnLocalStorage,
+    required UseCase<Future<Response>, LoginParams> loginUsecase,
+    required UseCase<void, WTOLSParams> writeTokenOnLocalStorage,
+    required UseCase<void, WUOLSParams> writeUserOnLocalStorage,
   })  : _loginUsecase = loginUsecase,
         _writeTokenOnLocalStorage = writeTokenOnLocalStorage,
         _writeUserOnLocalStorage = writeUserOnLocalStorage;
