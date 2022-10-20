@@ -21,7 +21,7 @@ class LoginBindings implements Bindings {
       () => WriteUserOnLocalStorage(Get.find()),
     );
 
-    Get.lazyPut<GetxController>(
+    Get.lazyPut(
       () => LoginController(
         loginUsecase: Get.find(),
         writeTokenOnLocalStorage: Get.find(),

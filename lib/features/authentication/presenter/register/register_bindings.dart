@@ -21,7 +21,7 @@ class RegisterBindings implements Bindings {
       () => WriteUserOnLocalStorage(Get.find()),
     );
 
-    Get.lazyPut<GetxController>(
+    Get.lazyPut(
       () => RegisterController(
         registerUsecase: Get.find(),
         writeTokenOnLocalStorage: Get.find(),

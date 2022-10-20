@@ -40,7 +40,7 @@ class SplashBindings implements Bindings {
       () => GetUserFromLocalStorage(Get.find()),
     );
 
-    Get.lazyPut<GetxController>(
+    Get.lazyPut(
       () => SplashController(
         isUserLogged: Get.find(),
         getTokenFromLocalStorage: Get.find(),
