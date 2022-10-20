@@ -27,9 +27,9 @@ class SplashController extends GetxController with LoaderMixin {
         return;
       }
       await Get.offNamed('/auth/login');
-    } on RemoteClientException catch (e) {
+    } on RemoteClientException {
       await Get.offNamed('/auth/login');
-    } on LocalStorageException catch (e) {
+    } on LocalStorageException {
       await Get.offNamed('/auth/login');
     }
   }
