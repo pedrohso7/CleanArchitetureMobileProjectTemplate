@@ -1,4 +1,4 @@
-import 'package:answer_me_app/features/home/home_controller.dart';
+import 'package:clean_architeture_project/features/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,4 +1,4 @@
-import 'package:answer_me_app/core/usecases/usecase.dart';
+import 'package:clean_architeture_project/core/usecases/usecase.dart';
 import 'package:get/get.dart';
 import '../../domain/usecases/login.dart';
 import '../../domain/usecases/write_token_on_local_storage.dart';

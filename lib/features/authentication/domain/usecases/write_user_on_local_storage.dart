@@ -1,6 +1,6 @@
-import 'package:answer_me_app/core/errors/local_storage_exception.dart';
-import 'package:answer_me_app/core/usecases/usecase.dart';
-import 'package:answer_me_app/features/authentication/domain/repositories/auth_repository_interface.dart';
+import 'package:clean_architeture_project/core/errors/local_storage_exception.dart';
+import 'package:clean_architeture_project/core/usecases/usecase.dart';
+import 'package:clean_architeture_project/features/authentication/domain/repositories/auth_repository_interface.dart';
 import 'package:dartz/dartz.dart';
 
 class WriteUserOnLocalStorage implements UseCase<void, WUOLSParams> {

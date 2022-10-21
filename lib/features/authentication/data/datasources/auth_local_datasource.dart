@@ -1,4 +1,4 @@
-import 'package:answer_me_app/core/errors/local_storage_exception.dart';
+import 'package:clean_architeture_project/core/errors/local_storage_exception.dart';
 import 'package:get_storage/get_storage.dart';
 
 abstract class AuthLocalDataSourceInterface {

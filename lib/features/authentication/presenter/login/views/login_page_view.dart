@@ -1,4 +1,4 @@
-import 'package:answer_me_app/core/widgets/default_button.dart';
+import 'package:clean_architeture_project/core/widgets/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

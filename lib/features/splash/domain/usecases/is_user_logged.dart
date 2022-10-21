@@ -1,5 +1,5 @@
-import 'package:answer_me_app/core/errors/remote_client_exception.dart';
-import 'package:answer_me_app/core/usecases/usecase.dart';
+import 'package:clean_architeture_project/core/errors/remote_client_exception.dart';
+import 'package:clean_architeture_project/core/usecases/usecase.dart';
 import 'package:dartz/dartz.dart';
 
 import '../repositories/splash_repository_interface.dart';

@@ -1,4 +1,4 @@
-import 'package:answer_me_app/core/platform/remote_client.dart';
+import 'package:clean_architeture_project/core/platform/remote_client.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 

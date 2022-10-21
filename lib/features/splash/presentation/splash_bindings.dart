@@ -1,6 +1,6 @@
-import 'package:answer_me_app/core/usecases/usecase.dart';
-import 'package:answer_me_app/features/splash/domain/usecases/get_token_from_local_storage.dart';
-import 'package:answer_me_app/features/splash/domain/usecases/get_user_from_local_storage.dart';
+import 'package:clean_architeture_project/core/usecases/usecase.dart';
+import 'package:clean_architeture_project/features/splash/domain/usecases/get_token_from_local_storage.dart';
+import 'package:clean_architeture_project/features/splash/domain/usecases/get_user_from_local_storage.dart';
 import 'package:get/get.dart';
 import '../data/datasources/splash_local_datasource.dart';
 import '../data/datasources/splash_remote_datasource.dart';

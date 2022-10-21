@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:answer_me_app/features/authentication/domain/entities/user.dart';
+import 'package:clean_architeture_project/features/authentication/domain/entities/user.dart';
 
 class UserModel extends User {
   UserModel(

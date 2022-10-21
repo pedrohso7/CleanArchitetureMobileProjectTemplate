@@ -1,4 +1,4 @@
-import 'package:answer_me_app/core/constants/color_constants.dart';
+import 'package:clean_architeture_project/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
 class DefaultTheme {
