@@ -1,24 +1,37 @@
-import 'package:answer_me_app/core/bindings/app_bindings.dart';
-import 'package:answer_me_app/core/routes/auth_routes.dart';
-import 'package:answer_me_app/core/routes/home_routes.dart';
-import 'package:answer_me_app/core/routes/splash_routes.dart';
-import 'package:answer_me_app/core/themes/default_theme.dart';
+import 'package:clean_architeture_project/core/bindings/app_bindings.dart';
+import 'package:clean_architeture_project/core/routes/auth_routes.dart';
+import 'package:clean_architeture_project/core/routes/home_routes.dart';
+import 'package:clean_architeture_project/core/routes/splash_routes.dart';
+import 'package:clean_architeture_project/core/themes/default_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 void main() async {
-  await Future.delayed(const Duration(milliseconds: 5000), () {
-    debugPrint('teste');
-  });
+  //Bindinds
+  WidgetsFlutterBinding.ensureInitialized();
 
+  //Device Orientation
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  //Envinronment
   await dotenv.load(fileName: ".env");
 
+  //Local Storage
   await GetStorage.init();
 
+  //Execute
   runApp(const AnswerMeApp());
+
+  //Initialize firebase services
+  await Firebase.initializeApp();
 }
 
 class AnswerMeApp extends StatelessWidget {
