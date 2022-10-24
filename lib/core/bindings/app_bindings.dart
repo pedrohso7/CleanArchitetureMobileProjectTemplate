@@ -6,7 +6,7 @@ class AppBindings implements Bindings {
   @override
   void dependencies() {
     // Bindings from core
-    Get.lazyPut(() => RemoteClient(), fenix: true);
-    Get.lazyPut(() => GetStorage(), fenix: true);
+    Get.lazyPut<RemoteClient>(() => RemoteClient(), fenix: true);
+    Get.lazyPut<GetStorage>(() => GetStorage(), fenix: true);
   }
 }
