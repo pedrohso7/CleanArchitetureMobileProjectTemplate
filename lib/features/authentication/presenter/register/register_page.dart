@@ -95,7 +95,8 @@ class RegisterPage extends GetView<RegisterController> {
                         borderRadius: 32,
                         label: 'CADASTRAR',
                         fontSize: 16,
-                        onPressed: () async => await controller.register(),
+                        onPressed: () async =>
+                            await controller.handleSubmitButtonEvent(),
                         width: mq.size.width,
                       ),
                       const SizedBox(height: 30),

@@ -27,10 +27,11 @@ class IsUserLogged implements UseCase<Future<bool>, IsUserLoggedParams> {
 }
 
 class IsUserLoggedParams {
-  late final String token;
-  late final String userId;
-  IsUserLoggedParams({
-    required this.token,
-    required this.userId,
-  });
+  final String token;
+  final String userId;
+
+  IsUserLoggedParams(
+    this.token,
+    this.userId,
+  );
 }

@@ -21,9 +21,9 @@ class WriteUserOnLocalStorage implements UseCase<void, WUOLSParams> {
 }
 
 class WUOLSParams {
-  late final Map user;
+  final Map user;
 
-  WUOLSParams({
-    required Map user,
-  });
+  WUOLSParams(
+    this.user,
+  );
 }

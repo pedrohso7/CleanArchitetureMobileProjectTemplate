@@ -30,13 +30,13 @@ class Register implements UseCase<Future<Response>, RegisterParams> {
 }
 
 class RegisterParams {
-  late final String name;
-  late final String email;
-  late final String password;
+  final String name;
+  final String email;
+  final String password;
 
-  RegisterParams({
-    required String name,
-    required String email,
-    required String password,
-  });
+  RegisterParams(
+    this.name,
+    this.email,
+    this.password,
+  );
 }

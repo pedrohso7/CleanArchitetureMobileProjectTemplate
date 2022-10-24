@@ -21,9 +21,9 @@ class WriteTokenOnLocalStorage implements UseCase<void, WTOLSParams> {
 }
 
 class WTOLSParams {
-  late final String token;
+  final String token;
 
-  WTOLSParams({
-    required String token,
-  });
+  WTOLSParams(
+    this.token,
+  );
 }

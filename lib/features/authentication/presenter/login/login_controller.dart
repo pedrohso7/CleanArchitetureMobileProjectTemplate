@@ -59,8 +59,8 @@ class LoginController extends GetxController
         loading.toggle();
         await login();
         loading.toggle();
+        await Get.toNamed('/home');
       }
-      await Get.toNamed('/home');
     } on RemoteClientException catch (e) {
       loading.toggle();
       message(MessageModel(
@@ -73,16 +73,18 @@ class LoginController extends GetxController
 
   Future<void> login() async {
     final Response response = await _loginUsecase.call(LoginParams(
-      email: emailEC.text,
-      password: passwordEC.text,
+      emailEC.text,
+      passwordEC.text,
     ));
 
     _writeTokenOnLocalStorage.call(WTOLSParams(
-      token: response.body['token'],
+      response.body['refreshToken'],
     ));
 
     _writeUserOnLocalStorage.call(WUOLSParams(
-      user: response.body['usr'],
+      {
+        'email': response.body['email'],
+      },
     ));
   }
 

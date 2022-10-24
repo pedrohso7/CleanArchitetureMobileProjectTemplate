@@ -68,7 +68,7 @@ class LoginPageView extends GetView<LoginController> {
                       fontSize: 16,
                       borderRadius: 32,
                       label: 'Entrar',
-                      onPressed: () => controller.login(),
+                      onPressed: () => controller.handleSubmitButtonEvent(),
                       width: mq.size.width,
                     ),
                     const SizedBox(height: 15),

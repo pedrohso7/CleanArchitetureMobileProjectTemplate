@@ -50,8 +50,8 @@ class RegisterController extends GetxController
         loading.toggle();
         await register();
         loading.toggle();
+        await Get.offAllNamed('/home');
       }
-      await Get.offAllNamed('/home');
     } on RemoteClientException catch (e) {
       loading.toggle();
       message(MessageModel(
@@ -63,18 +63,20 @@ class RegisterController extends GetxController
   }
 
   Future<void> register() async {
-    final Response response = await _registerUsecase.call(RegisterParams(
-      name: nameEC.text,
-      email: emailEC.text,
-      password: passwordEC.text,
-    ));
+    final Response response = await _registerUsecase.call(
+      RegisterParams(
+        nameEC.text,
+        emailEC.text,
+        passwordEC.text,
+      ),
+    );
 
     _writeTokenOnLocalStorage.call(WTOLSParams(
-      token: response.body['token'],
+      response.body['token'],
     ));
 
     _writeUserOnLocalStorage.call(WUOLSParams(
-      user: response.body['usr'],
+      response.body['usr'],
     ));
   }
 

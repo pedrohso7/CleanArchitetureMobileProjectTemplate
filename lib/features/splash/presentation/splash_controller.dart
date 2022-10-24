@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:clean_architeture_project/core/errors/local_storage_exception.dart';
 import 'package:clean_architeture_project/core/errors/remote_client_exception.dart';
 import 'package:clean_architeture_project/core/mixins/loading_mixin.dart';
@@ -31,6 +33,8 @@ class SplashController extends GetxController with LoaderMixin {
       await Get.offNamed('/auth/login');
     } on LocalStorageException {
       await Get.offNamed('/auth/login');
+    } on TimeoutException {
+      await Get.offNamed('/auth/login');
     }
   }
 
@@ -39,8 +43,7 @@ class SplashController extends GetxController with LoaderMixin {
 
     final User user = _getUserFromLocalStorage(NoParams());
 
-    if (await _isUserLogged
-        .call(IsUserLoggedParams(token: token, userId: user.id))) {
+    if (await _isUserLogged.call(IsUserLoggedParams(token, user.id))) {
       return true;
     }
     return false;

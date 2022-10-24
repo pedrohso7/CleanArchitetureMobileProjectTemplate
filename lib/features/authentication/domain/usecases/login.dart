@@ -27,11 +27,11 @@ class Login implements UseCase<Future<Response>, LoginParams> {
 }
 
 class LoginParams {
-  late final String email;
-  late final String password;
+  final String email;
+  final String password;
 
-  LoginParams({
-    required String email,
-    required String password,
-  });
+  LoginParams(
+    this.email,
+    this.password,
+  );
 }
