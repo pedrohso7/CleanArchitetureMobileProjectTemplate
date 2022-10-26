@@ -1,5 +1,5 @@
-import 'package:clean_architeture_project/features/home/home_bindings.dart';
-import 'package:clean_architeture_project/features/home/home_page.dart';
+import 'package:clean_architeture_project/features/home/presenter/home_bindings.dart';
+import 'package:clean_architeture_project/features/home/presenter/home_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class HomeRoutes {
