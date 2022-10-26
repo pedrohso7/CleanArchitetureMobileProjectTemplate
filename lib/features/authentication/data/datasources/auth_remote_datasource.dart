@@ -1,6 +1,6 @@
 import 'package:clean_architeture_project/core/constants/firebase_auth_errors.dart';
 import 'package:clean_architeture_project/core/errors/remote_client_exception.dart';
-import 'package:clean_architeture_project/core/platform/remote_client.dart';
+import 'package:clean_architeture_project/core/platform/auth_client.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 
@@ -17,9 +17,9 @@ abstract class AuthRemoteDataSourceInterface {
 }
 
 class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
-  final RemoteClient remoteClient;
+  final AuthClient authClient;
 
-  AuthRemoteDataSource({required this.remoteClient});
+  AuthRemoteDataSource({required this.authClient});
 
   @override
   Future<Response> register({
@@ -27,7 +27,7 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
     required String email,
     required String password,
   }) async {
-    final Response result = await remoteClient.post('/accounts:signUp', {
+    final Response result = await authClient.post('/accounts:signUp', {
       'email': email,
       'password': password,
       'returnSecureToken': true,
@@ -50,7 +50,7 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
     required String email,
     required String password,
   }) async {
-    final Response result = await remoteClient.post(
+    final Response result = await authClient.post(
       '/accounts:signInWithPassword',
       {
         'email': email,

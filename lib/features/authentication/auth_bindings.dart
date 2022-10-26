@@ -17,7 +17,7 @@ class AuthBindings implements Bindings {
 
     Get.lazyPut<AuthRemoteDataSourceInterface>(
       () => AuthRemoteDataSource(
-        remoteClient: Get.find(),
+        authClient: Get.find(),
       ),
     );
 
