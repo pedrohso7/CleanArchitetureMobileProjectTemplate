@@ -59,7 +59,7 @@ class LoginController extends GetxController
         loading.toggle();
         await login();
         loading.toggle();
-        await Get.toNamed('/home');
+        await Get.offAllNamed('/home');
       }
     } on RemoteClientException catch (e) {
       loading.toggle();
