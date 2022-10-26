@@ -1,28 +1,20 @@
+import 'package:clean_architeture_project/core/errors/local_storage_exception.dart';
 import 'package:clean_architeture_project/core/usecases/usecase.dart';
 import 'package:get/get.dart';
 
-import '../domain/usecases/write_token_on_local_storage.dart';
-import '../domain/usecases/write_user_on_local_storage.dart';
-
 class HomeController extends GetxController {
-  final UseCase<void, WTOLSParams> _writeTokenOnLocalStorage;
-  final UseCase<void, WUOLSParams> _writeUserOnLocalStorage;
+  final UseCase<void, NoParams> _removeAuthCachedData;
 
   HomeController({
-    required UseCase<void, WTOLSParams> writeTokenOnLocalStorage,
-    required UseCase<void, WUOLSParams> writeUserOnLocalStorage,
-  })  : _writeTokenOnLocalStorage = writeTokenOnLocalStorage,
-        _writeUserOnLocalStorage = writeUserOnLocalStorage;
+    required UseCase<void, NoParams> removeAuthCachedData,
+  }) : _removeAuthCachedData = removeAuthCachedData;
 
   void handleLogoutButtonAction() {
-    _writeTokenOnLocalStorage.call(WTOLSParams(
-      '',
-    ));
-
-    _writeUserOnLocalStorage.call(WUOLSParams(
-      {},
-    ));
-
-    Get.offAllNamed('/auth/login');
+    try {
+      _removeAuthCachedData.call(NoParams());
+      Get.offAllNamed('/auth/login');
+    } on LocalStorageException {
+      Get.offAllNamed('/auth/login');
+    }
   }
 }

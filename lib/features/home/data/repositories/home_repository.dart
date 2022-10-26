@@ -11,20 +11,9 @@ class HomeRepository implements HomeRepositoryInterface {
   });
 
   @override
-  Either<LocalStorageException, void> writeUserOnLocalStorage(
-      {required Map user}) {
+  Either<LocalStorageException, void> removeAuthCachedData() {
     try {
-      return Right(localDataSource.writeUserOnLocalStorage(user));
-    } on LocalStorageException catch (e) {
-      return Left(LocalStorageException(message: e.message));
-    }
-  }
-
-  @override
-  Either<LocalStorageException, void> writeTokenOnLocalStorage(
-      {required String token}) {
-    try {
-      return Right(localDataSource.writeTokenOnLocalStorage(token));
+      return Right(localDataSource.removeAuthCachedData());
     } on LocalStorageException catch (e) {
       return Left(LocalStorageException(message: e.message));
     }

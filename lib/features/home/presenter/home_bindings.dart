@@ -1,25 +1,34 @@
 import 'package:clean_architeture_project/core/usecases/usecase.dart';
 import 'package:get/get.dart';
 
-import '../domain/usecases/write_token_on_local_storage.dart';
-import '../domain/usecases/write_user_on_local_storage.dart';
+import '../data/datasources/home_local_datasource.dart';
+import '../data/repositories/home_repository.dart';
+import '../domain/repositories/home_repository_interface.dart';
+import '../domain/usecases/remove_auth_cached_data.dart';
 import 'home_controller.dart';
 
 class HomeBindings implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<UseCase<void, WTOLSParams>>(
-      () => WriteTokenOnLocalStorage(Get.find()),
+    Get.lazyPut<HomeLocalDataSourceInterface>(
+      () => HomeLocalDataSource(
+        getStorage: Get.find(),
+      ),
     );
 
-    Get.lazyPut<UseCase<void, WUOLSParams>>(
-      () => WriteUserOnLocalStorage(Get.find()),
+    Get.lazyPut<HomeRepositoryInterface>(
+      () => HomeRepository(
+        localDataSource: Get.find(),
+      ),
+    );
+
+    Get.lazyPut<UseCase<void, NoParams>>(
+      () => RemoveAuthCachedData(Get.find()),
     );
 
     Get.lazyPut(
       () => HomeController(
-        writeTokenOnLocalStorage: Get.find(),
-        writeUserOnLocalStorage: Get.find(),
+        removeAuthCachedData: Get.find(),
       ),
     );
   }
