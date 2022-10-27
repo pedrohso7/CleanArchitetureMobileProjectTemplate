@@ -3,7 +3,7 @@ import 'package:get_storage/get_storage.dart';
 
 abstract class AuthLocalDataSourceInterface {
   void writeUserOnLocalStorage(Map user);
-  void writeTokenOnLocalStorage(String token);
+  void writeStringOnLocalStorage(String key, String value);
 }
 
 class AuthLocalDataSource implements AuthLocalDataSourceInterface {
@@ -22,9 +22,9 @@ class AuthLocalDataSource implements AuthLocalDataSourceInterface {
   }
 
   @override
-  void writeTokenOnLocalStorage(String token) {
+  void writeStringOnLocalStorage(String key, String value) {
     try {
-      getStorage.write('token', token);
+      getStorage.write(key, value);
     } catch (e) {
       throw LocalStorageException(
           message: 'Erro ao registrar recurso em cache');

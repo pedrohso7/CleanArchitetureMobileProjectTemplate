@@ -15,6 +15,6 @@ abstract class AuthRepositoryInterface {
   });
   Either<LocalStorageException, void> writeUserOnLocalStorage(
       {required Map user});
-  Either<LocalStorageException, void> writeTokenOnLocalStorage(
-      {required String token});
+  Either<LocalStorageException, void> writeStringOnLocalStorage(
+      {required String key, required String value});
 }

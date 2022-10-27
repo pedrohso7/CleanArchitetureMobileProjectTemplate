@@ -58,10 +58,12 @@ class AuthRepository implements AuthRepositoryInterface {
   }
 
   @override
-  Either<LocalStorageException, void> writeTokenOnLocalStorage(
-      {required String token}) {
+  Either<LocalStorageException, void> writeStringOnLocalStorage({
+    required String key,
+    required String value,
+  }) {
     try {
-      return Right(localDataSource.writeTokenOnLocalStorage(token));
+      return Right(localDataSource.writeStringOnLocalStorage(key, value));
     } on LocalStorageException catch (e) {
       return Left(LocalStorageException(message: e.message));
     }

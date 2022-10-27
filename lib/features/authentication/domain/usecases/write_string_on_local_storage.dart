@@ -3,14 +3,17 @@ import 'package:clean_architeture_project/core/usecases/usecase.dart';
 import 'package:clean_architeture_project/features/authentication/domain/repositories/auth_repository_interface.dart';
 import 'package:dartz/dartz.dart';
 
-class WriteTokenOnLocalStorage implements UseCase<void, WTOLSParams> {
+class WriteStringOnLocalStorage implements UseCase<void, WSOLSParams> {
   final AuthRepositoryInterface authRepository;
-  WriteTokenOnLocalStorage(this.authRepository);
+  WriteStringOnLocalStorage(this.authRepository);
 
   @override
-  Future<void> call(WTOLSParams params) async {
+  Future<void> call(WSOLSParams params) async {
     final Either<LocalStorageException, void> response =
-        authRepository.writeTokenOnLocalStorage(token: params.token);
+        authRepository.writeStringOnLocalStorage(
+      key: params.key,
+      value: params.value,
+    );
 
     if (response.isLeft()) {
       final LocalStorageException? exception =
@@ -20,10 +23,12 @@ class WriteTokenOnLocalStorage implements UseCase<void, WTOLSParams> {
   }
 }
 
-class WTOLSParams {
-  final String token;
+class WSOLSParams {
+  final String key;
+  final String value;
 
-  WTOLSParams(
-    this.token,
+  WSOLSParams(
+    this.key,
+    this.value,
   );
 }
