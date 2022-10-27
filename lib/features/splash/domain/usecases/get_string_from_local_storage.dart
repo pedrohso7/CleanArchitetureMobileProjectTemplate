@@ -4,14 +4,14 @@ import 'package:dartz/dartz.dart';
 
 import '../repositories/splash_repository_interface.dart';
 
-class GetTokenFromLocalStorage implements UseCase<String, NoParams> {
+class GetStringFromLocalStorage implements UseCase<String, GSFLSParams> {
   final SplashRepositoryInterface splashRepository;
-  GetTokenFromLocalStorage(this.splashRepository);
+  GetStringFromLocalStorage(this.splashRepository);
 
   @override
-  String call(NoParams params) {
+  String call(GSFLSParams params) {
     final Either<LocalStorageException, String> token =
-        splashRepository.getTokenFromLocalStorage();
+        splashRepository.getStringFromLocalStorage(params.key);
 
     if (token.isLeft()) {
       final LocalStorageException? exception =
@@ -23,4 +23,9 @@ class GetTokenFromLocalStorage implements UseCase<String, NoParams> {
 
     return tokenValue!;
   }
+}
+
+class GSFLSParams {
+  final String key;
+  GSFLSParams(this.key);
 }
