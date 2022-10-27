@@ -7,7 +7,7 @@ import 'package:clean_architeture_project/features/authentication/domain/usecase
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../domain/usecases/write_token_on_local_storage.dart';
+import '../../domain/usecases/write_string_on_local_storage.dart';
 import '../../domain/usecases/write_user_on_local_storage.dart';
 
 class RegisterController extends GetxController
@@ -23,15 +23,15 @@ class RegisterController extends GetxController
   final RxBool isPasswordConfirmationVisible = false.obs;
 
   final UseCase<Future<Response>, RegisterParams> _registerUsecase;
-  final UseCase<void, WTOLSParams> _writeTokenOnLocalStorage;
+  final UseCase<void, WSOLSParams> _writeStringOnLocalStorage;
   final UseCase<void, WUOLSParams> _writeUserOnLocalStorage;
 
   RegisterController({
     required UseCase<Future<Response>, RegisterParams> registerUsecase,
-    required UseCase<void, WTOLSParams> writeTokenOnLocalStorage,
+    required UseCase<void, WSOLSParams> writeStringOnLocalStorage,
     required UseCase<void, WUOLSParams> writeUserOnLocalStorage,
   })  : _registerUsecase = registerUsecase,
-        _writeTokenOnLocalStorage = writeTokenOnLocalStorage,
+        _writeStringOnLocalStorage = writeStringOnLocalStorage,
         _writeUserOnLocalStorage = writeUserOnLocalStorage;
 
   @override
@@ -71,12 +71,31 @@ class RegisterController extends GetxController
       ),
     );
 
-    _writeTokenOnLocalStorage.call(WTOLSParams(
-      response.body['token'],
+    cacheAuthData(response);
+  }
+
+  void cacheAuthData(Response response) {
+    _writeStringOnLocalStorage.call(WSOLSParams(
+      'token',
+      response.body['idToken'],
+    ));
+
+    final DateTime expiryTime = DateTime.now().add(
+      Duration(
+        seconds: int.parse(response.body['expiresIn']),
+      ),
+    );
+
+    _writeStringOnLocalStorage.call(WSOLSParams(
+      'expiryDate',
+      expiryTime.toIso8601String(),
     ));
 
     _writeUserOnLocalStorage.call(WUOLSParams(
-      response.body['usr'],
+      {
+        'email': response.body['email'],
+        'userId': response.body['localId'],
+      },
     ));
   }
 

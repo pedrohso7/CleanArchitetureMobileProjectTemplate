@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../domain/usecases/login.dart';
-import '../../domain/usecases/write_token_on_local_storage.dart';
+import '../../domain/usecases/write_string_on_local_storage.dart';
 import '../../domain/usecases/write_user_on_local_storage.dart';
 
 class LoginController extends GetxController
@@ -22,15 +22,15 @@ class LoginController extends GetxController
   final RxBool isPasswordVisible = false.obs;
 
   final UseCase<Future<Response>, LoginParams> _loginUsecase;
-  final UseCase<void, WTOLSParams> _writeTokenOnLocalStorage;
+  final UseCase<void, WSOLSParams> _writeStringOnLocalStorage;
   final UseCase<void, WUOLSParams> _writeUserOnLocalStorage;
 
   LoginController({
     required UseCase<Future<Response>, LoginParams> loginUsecase,
-    required UseCase<void, WTOLSParams> writeTokenOnLocalStorage,
+    required UseCase<void, WSOLSParams> writeStringOnLocalStorage,
     required UseCase<void, WUOLSParams> writeUserOnLocalStorage,
   })  : _loginUsecase = loginUsecase,
-        _writeTokenOnLocalStorage = writeTokenOnLocalStorage,
+        _writeStringOnLocalStorage = writeStringOnLocalStorage,
         _writeUserOnLocalStorage = writeUserOnLocalStorage;
 
   @override
@@ -77,13 +77,30 @@ class LoginController extends GetxController
       passwordEC.text,
     ));
 
-    _writeTokenOnLocalStorage.call(WTOLSParams(
-      response.body['refreshToken'],
+    cacheAuthData(response);
+  }
+
+  void cacheAuthData(Response response) {
+    _writeStringOnLocalStorage.call(WSOLSParams(
+      'token',
+      response.body['idToken'],
+    ));
+
+    final DateTime expiryTime = DateTime.now().add(
+      Duration(
+        seconds: int.parse(response.body['expiresIn']),
+      ),
+    );
+
+    _writeStringOnLocalStorage.call(WSOLSParams(
+      'expiryDate',
+      expiryTime.toIso8601String(),
     ));
 
     _writeUserOnLocalStorage.call(WUOLSParams(
       {
         'email': response.body['email'],
+        'userId': response.body['localId'],
       },
     ));
   }
