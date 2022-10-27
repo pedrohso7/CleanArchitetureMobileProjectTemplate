@@ -13,8 +13,9 @@ class HomeLocalDataSource implements HomeLocalDataSourceInterface {
   @override
   void removeAuthCachedData() {
     try {
-      getStorage.write('user', null);
-      getStorage.write('token', null);
+      getStorage.remove('user');
+      getStorage.remove('token');
+      getStorage.remove('expiryDate');
     } catch (e) {
       throw LocalStorageException(
           message: 'Erro ao registrar recurso em cache');
