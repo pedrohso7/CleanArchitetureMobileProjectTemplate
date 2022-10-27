@@ -98,7 +98,7 @@ The following images are from the authentication and splash features:
 
 ## ✦ Usage
 <p align="justify">
-To start using this template, fork this repo and start using. Make sure you created your .env on the root path following .env.example to run and, then, run the following command in the root path too:
+To start using this template, fork this repo and start using. Make sure you created your .env on the root path following .env.example and, then, run the following command in the root path too:
 </p>
 
 ```
