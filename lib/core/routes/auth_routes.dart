@@ -3,6 +3,8 @@ import 'package:clean_architeture_project/features/authentication/presenter/logi
 import 'package:clean_architeture_project/features/authentication/presenter/login/login_page.dart';
 import 'package:clean_architeture_project/features/authentication/presenter/register/register_bindings.dart';
 import 'package:clean_architeture_project/features/authentication/presenter/register/register_page.dart';
+import 'package:clean_architeture_project/features/authentication/presenter/retrieve_account/retrieve_account_bindings.dart';
+import 'package:clean_architeture_project/features/authentication/presenter/retrieve_account/retrieve_account_page.dart';
 import 'package:get/get.dart';
 
 class AuthRoutes {
@@ -23,6 +25,16 @@ class AuthRoutes {
         RegisterBindings(),
       ],
       page: () => const RegisterPage(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 200),
+    ),
+    GetPage(
+      name: '/auth/retrieve-account',
+      bindings: [
+        AuthBindings(),
+        RetrieveAccountBindings(),
+      ],
+      page: () => const RetrieveAccountPage(),
       transition: Transition.downToUp,
       transitionDuration: const Duration(milliseconds: 200),
     ),

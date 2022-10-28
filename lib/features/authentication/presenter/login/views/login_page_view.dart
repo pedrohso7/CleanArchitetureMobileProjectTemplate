@@ -71,33 +71,22 @@ class LoginPageView extends GetView<LoginController> {
                       onPressed: () => controller.handleSubmitButtonEvent(),
                       width: mq.size.width,
                     ),
-                    const SizedBox(height: 15),
-                    // TextButton(
-                    //   onPressed: () => {
-                    //     if (controller.pageController.hasClients)
-                    //       {
-                    //         controller.pageController.animateToPage(
-                    //           1,
-                    //           duration: const Duration(milliseconds: 600),
-                    //           curve: Curves.easeInOut,
-                    //         ),
-                    //       }
-                    //   },
-                    //   child: Text(
-                    //     'Esqueceu sua senha?',
-                    //     style: TextStyle(
-                    //       color: context.theme.primaryColor,
-                    //       fontSize: 16,
-                    //       fontWeight: FontWeight.bold,
-                    //     ),
-                    //     textScaleFactor: 1,
-                    //   ),
-                    // ),
+                    TextButton(
+                      onPressed: () => Get.toNamed('/auth/retrieve-account'),
+                      child: Text(
+                        'Esqueceu sua senha?',
+                        style: TextStyle(
+                          color: context.theme.primaryColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textScaleFactor: 1,
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
-            const SizedBox(height: 35),
             Column(
               children: [
                 Row(
