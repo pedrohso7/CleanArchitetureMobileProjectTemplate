@@ -98,16 +98,7 @@ The following images are from the authentication and splash features:
 
 ## ✦ Usage
 <p align="justify">
-To start using this template, make sure you have an API to use but if you want to start testing right now, i made a test Node Api  
-<a href="https://github.com/pedrohso7/apiTestAuthentication">here</p> that you can clone, configure and use to test.
-</p>
-
-<p align="justify">
-Once you have an API running, you have to create your .env file on root path following .env.example and then you're prepare to run the app.
-</p>
-
-<p align="justify">
-Make sure you're on the root path and run:
+To start using this template, fork this repo and start using. Make sure you created your .env on the root path following .env.example and, then, run the following command in the root path too:
 </p>
 
 ```
@@ -115,7 +106,7 @@ flutter pub get
 ```
 
 <p align="justify">
-To get dependencies and run using:
+To get dependencies and, finally, run using:
 </p>
 
 ```
