@@ -16,7 +16,7 @@ dependencies:
   get_storage: ^2.0.3
   flutter_localizations:
     sdk: flutter
-  material_design_icons_flutter: ^5.0.6996
+  material_design_icons_flutter: ^7.0.7296
   dartz: ^0.10.1
   flutter_dotenv: ^5.0.2
   firebase_core: ^2.1.0
@@ -24,7 +24,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.2
 
 flutter:
   uses-material-design: true
