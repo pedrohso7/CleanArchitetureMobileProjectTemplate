@@ -23,7 +23,7 @@ class LoginTextInput extends StatelessWidget {
       textCapitalization: TextCapitalization.none,
       textInputAction: TextInputAction.next,
       borderColor: Colors.transparent,
-      icon: const Icon(
+      icon: Icon(
         MdiIcons.email,
         color: Colors.grey,
         size: 25,

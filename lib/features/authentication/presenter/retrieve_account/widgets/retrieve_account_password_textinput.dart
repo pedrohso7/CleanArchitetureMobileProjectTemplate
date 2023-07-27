@@ -25,7 +25,7 @@ class RetrieveAccountPasswordTextInput extends StatelessWidget {
         vertical: 10,
       ),
       textCapitalization: TextCapitalization.none,
-      icon: const Icon(
+      icon: Icon(
         MdiIcons.lock,
         color: Colors.grey,
         size: 25,
@@ -45,12 +45,12 @@ class RetrieveAccountPasswordTextInput extends StatelessWidget {
         splashColor: Colors.transparent,
         onPressed: onTapRightIcon,
         icon: isPasswordVisible
-            ? const Icon(
+            ? Icon(
                 MdiIcons.eye,
                 color: Colors.grey,
                 size: 25,
               )
-            : const Icon(
+            : Icon(
                 MdiIcons.eyeOff,
                 color: Colors.grey,
                 size: 25,

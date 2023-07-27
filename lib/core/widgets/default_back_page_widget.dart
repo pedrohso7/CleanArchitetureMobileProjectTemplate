@@ -25,7 +25,7 @@ class DefaultBackPageWidget extends StatelessWidget {
               // radius: 32,
               borderRadius: BorderRadius.circular(50),
               onTap: onTap,
-              child: const Icon(
+              child: Icon(
                 MdiIcons.chevronLeft,
                 color: Colors.black54,
                 size: 45,

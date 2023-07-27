@@ -69,13 +69,13 @@ extension MessageTypeColorExtension on MessageType {
   Icon get icon {
     switch (this) {
       case MessageType.success:
-        return const Icon(Icons.check, color: Color(0xFF1F8B24));
+        return Icon(Icons.check, color: Color(0xFF1F8B24));
       case MessageType.warning:
-        return const Icon(Icons.warning, color: Color(0xFFBF710F));
+        return Icon(Icons.warning, color: Color(0xFFBF710F));
       case MessageType.info:
-        return const Icon(Icons.info, color: Colors.black);
+        return Icon(Icons.info, color: Colors.black);
       case MessageType.error:
-        return const Icon(Icons.error, color: Color(0xFFDA100B));
+        return Icon(Icons.error, color: Color(0xFFDA100B));
     }
   }
 }
