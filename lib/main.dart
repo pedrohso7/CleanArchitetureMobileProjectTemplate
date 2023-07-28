@@ -28,14 +28,14 @@ void main() async {
   await GetStorage.init();
 
   //Execute
-  runApp(const AnswerMeApp());
+  runApp(const CleanArchApp());
 
   //Initialize firebase services
   await Firebase.initializeApp();
 }
 
-class AnswerMeApp extends StatelessWidget {
-  const AnswerMeApp({Key? key}) : super(key: key);
+class CleanArchApp extends StatelessWidget {
+  const CleanArchApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
