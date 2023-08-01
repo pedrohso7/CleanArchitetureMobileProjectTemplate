@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../retrieve_account_controller.dart';
-import '../widgets/retrieve_account_stepper.dart';
 
 class RetrieveAccountPageView extends GetView<RetrieveAccountController> {
   const RetrieveAccountPageView({Key? key}) : super(key: key);
@@ -18,20 +17,21 @@ class RetrieveAccountPageView extends GetView<RetrieveAccountController> {
     return Form(
       key: controller.retrieveAccountGK,
       child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Column(
           children: [
             Text(
               'Redefinir senha',
               style: TextStyle(
                 color: context.theme.primaryColor,
-                fontSize: 34,
+                fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
               textScaleFactor: 1,
             ),
             const SizedBox(height: 25),
             const Text(
-              'Digite o seu email e em breve você receberá um código de confirmação para redefinir sua senha',
+              'Digite o seu email e em breve você receberá um link para redefinir sua senha',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: ColorsConstants.COLOR_DARK,
@@ -57,7 +57,7 @@ class RetrieveAccountPageView extends GetView<RetrieveAccountController> {
             ),
             const SizedBox(height: 8),
             TextButton(
-              onPressed: () => controller.pageController.jumpTo(0),
+              onPressed: () => Get.back(),
               child: Text(
                 'Voltar',
                 style: TextStyle(
