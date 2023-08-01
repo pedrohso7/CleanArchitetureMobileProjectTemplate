@@ -27,4 +27,4 @@ flutter:
 
   assets:
     - .env
-    - lib/assets/images/brain.png
+    - lib/core/assets/images/brain.png
