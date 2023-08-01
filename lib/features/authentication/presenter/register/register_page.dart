@@ -40,8 +40,8 @@ class RegisterPage extends GetView<RegisterController> {
                         'Cadastro',
                         style: TextStyle(
                           color: context.theme.primaryColor,
+                          fontSize: 40,
                           fontWeight: FontWeight.bold,
-                          fontSize: 26,
                         ),
                       ),
                       const SizedBox(height: 32),
