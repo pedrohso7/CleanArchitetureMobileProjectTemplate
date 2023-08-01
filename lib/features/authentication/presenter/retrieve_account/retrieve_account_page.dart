@@ -16,7 +16,7 @@ class RetrieveAccountPage extends GetView<RetrieveAccountController> {
     final MediaQueryData mq = MediaQuery.of(context);
 
     return Scaffold(
-      backgroundColor: ColorsConstants.DEFAULT_BACKGROUND_COLOR,
+      backgroundColor: ColorsConstants.defaultBackgroundColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -50,7 +50,7 @@ class RetrieveAccountPage extends GetView<RetrieveAccountController> {
                           'Digite o seu email e em breve você receberá um link para redefinir sua senha',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: ColorsConstants.COLOR_DARK,
+                            color: ColorsConstants.dark,
                             fontSize: 14,
                           ),
                           textScaleFactor: 1,

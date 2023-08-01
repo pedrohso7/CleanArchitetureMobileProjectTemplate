@@ -65,16 +65,16 @@ class RetrieveAccountStepper extends StatelessWidget {
         stepPoint(
           step: 1,
           opacity: 1,
-          stepColor: ColorsConstants.PRIMARY_COLOR,
+          stepColor: ColorsConstants.primaryColor,
           textColor: Colors.white,
         ),
         stepLine(
-          lineColor: ColorsConstants.PRIMARY_COLOR,
+          lineColor: ColorsConstants.primaryColor,
           opacity: 1,
         ),
         stepPointBlank(),
         stepLine(
-          lineColor: ColorsConstants.PRIMARY_COLOR,
+          lineColor: ColorsConstants.primaryColor,
           opacity: 1,
         ),
         Builder(builder: (context) {
@@ -83,13 +83,13 @@ class RetrieveAccountStepper extends StatelessWidget {
               step: 2,
               opacity: 1,
               stepColor: Colors.grey.shade300,
-              textColor: ColorsConstants.PRIMARY_COLOR,
+              textColor: ColorsConstants.primaryColor,
             );
           }
           return stepPoint(
             step: 2,
             opacity: 0.6,
-            stepColor: ColorsConstants.PRIMARY_COLOR,
+            stepColor: ColorsConstants.primaryColor,
             textColor: Colors.white,
           );
         }),
@@ -101,7 +101,7 @@ class RetrieveAccountStepper extends StatelessWidget {
             );
           }
           return stepLine(
-            lineColor: ColorsConstants.PRIMARY_COLOR,
+            lineColor: ColorsConstants.primaryColor,
             opacity: 0.9,
           );
         }),
@@ -109,7 +109,7 @@ class RetrieveAccountStepper extends StatelessWidget {
         Builder(builder: (context) {
           if (step == 2) {
             return stepLine(
-              lineColor: ColorsConstants.PRIMARY_COLOR,
+              lineColor: ColorsConstants.primaryColor,
               opacity: 0.6,
             );
           }
@@ -123,7 +123,7 @@ class RetrieveAccountStepper extends StatelessWidget {
             return stepPoint(
               step: 3,
               opacity: 0.3,
-              stepColor: ColorsConstants.PRIMARY_COLOR,
+              stepColor: ColorsConstants.primaryColor,
               textColor: Colors.white,
             );
           }
@@ -131,7 +131,7 @@ class RetrieveAccountStepper extends StatelessWidget {
             step: 3,
             opacity: 1,
             stepColor: Colors.grey.shade300,
-            textColor: ColorsConstants.PRIMARY_COLOR,
+            textColor: ColorsConstants.primaryColor,
           );
         }),
       ],

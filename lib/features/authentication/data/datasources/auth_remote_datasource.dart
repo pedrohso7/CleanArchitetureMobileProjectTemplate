@@ -1,8 +1,9 @@
-import 'package:clean_architeture_project/core/constants/firebase_auth_errors.dart';
 import 'package:clean_architeture_project/core/errors/remote_client_exception.dart';
 import 'package:clean_architeture_project/core/platform/auth_client.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
+
+import '../../../../core/constants/firebase_auth_errors.dart';
 
 abstract class AuthRemoteDataSourceInterface {
   Future<Response> register({
@@ -40,7 +41,7 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
 
     if (result.hasError) {
       throw RemoteClientException(
-        '${AuthErrors.firebase_auth_errors[result.body['error']['message'].split(' ')[0]]}',
+        '${AuthErrors.firebaseAuthErrors[result.body['error']['message'].split(' ')[0]]}',
         code: result.statusCode,
       );
     }
@@ -67,7 +68,7 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
 
     if (result.hasError) {
       throw RemoteClientException(
-        '${AuthErrors.firebase_auth_errors[result.body['error']['message']]}',
+        '${AuthErrors.firebaseAuthErrors[result.body['error']['message']]}',
         code: result.statusCode,
       );
     }
@@ -92,7 +93,7 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
 
     if (result.hasError) {
       throw RemoteClientException(
-        '${AuthErrors.firebase_auth_errors[result.body['error']['message']]}',
+        '${AuthErrors.firebaseAuthErrors[result.body['error']['message']]}',
         code: result.statusCode,
       );
     }

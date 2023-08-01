@@ -12,7 +12,7 @@ class LoginPage extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsConstants.DEFAULT_BACKGROUND_COLOR,
+      backgroundColor: ColorsConstants.defaultBackgroundColor,
       body: SingleChildScrollView(
         controller: controller.scrollController,
         child: Stack(

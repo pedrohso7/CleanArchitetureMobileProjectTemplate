@@ -21,7 +21,7 @@ class AnimatedBackground extends StatelessWidget {
         children: [
           Container(
             decoration: const BoxDecoration(
-              color: ColorsConstants.PRIMARY_COLOR,
+              color: ColorsConstants.primaryColor,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(50),
                 bottomRight: Radius.circular(50),
@@ -40,7 +40,7 @@ class AnimatedBackground extends StatelessWidget {
             child: Transform.scale(
               scale: 0.7,
               child: Image.asset(
-                ImagePathConstants.BRAIN_LOGO_PATH,
+                ImagePathConstants.brainLogoPath,
               ),
             ),
           ),
@@ -55,7 +55,7 @@ class DrawTriangleShape extends CustomPainter {
 
   DrawTriangleShape() {
     painter = Paint()
-      ..color = ColorsConstants.DEFAULT_BACKGROUND_COLOR
+      ..color = ColorsConstants.defaultBackgroundColor
       ..style = PaintingStyle.fill;
   }
 

@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:clean_architeture_project/core/errors/local_storage_exception.dart';
-import 'package:clean_architeture_project/core/errors/remote_client_exception.dart';
 import 'package:clean_architeture_project/core/mixins/loading_mixin.dart';
 import 'package:clean_architeture_project/core/usecases/usecase.dart';
 import 'package:clean_architeture_project/features/splash/domain/usecases/get_string_from_local_storage.dart';

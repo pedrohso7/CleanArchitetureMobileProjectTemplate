@@ -4,20 +4,20 @@ import 'package:flutter/material.dart';
 class DefaultTheme {
   DefaultTheme._();
   static final ThemeData theme = ThemeData(
-    primaryColor: ColorsConstants.PRIMARY_COLOR,
-    primaryColorDark: ColorsConstants.COLOR_DARK,
+    primaryColor: ColorsConstants.primaryColor,
+    primaryColorDark: ColorsConstants.dark,
     // fontFamily: 'sequel',
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: ColorsConstants.PRIMARY_COLOR,
+        backgroundColor: ColorsConstants.primaryColor,
         textStyle: const TextStyle(
           fontFamily: 'sequel',
         ),
       ),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      selectedItemColor: ColorsConstants.PRIMARY_COLOR,
-      selectedIconTheme: IconThemeData(color: ColorsConstants.PRIMARY_COLOR),
+      selectedItemColor: ColorsConstants.primaryColor,
+      selectedIconTheme: IconThemeData(color: ColorsConstants.primaryColor),
       selectedLabelStyle: textBold,
       unselectedItemColor: Colors.grey,
       unselectedIconTheme: IconThemeData(color: Colors.grey),

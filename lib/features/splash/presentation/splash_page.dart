@@ -20,7 +20,7 @@ class SplashPage extends GetView<SplashController> {
           child: ClipOval(
             child: Material(
               color: Colors.white,
-              child: Image.asset(ImagePathConstants.BRAIN_LOGO_PATH),
+              child: Image.asset(ImagePathConstants.brainLogoPath),
             ),
           ),
         ),

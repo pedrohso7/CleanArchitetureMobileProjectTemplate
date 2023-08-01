@@ -1,6 +1,6 @@
 class AuthErrors {
   AuthErrors._();
-  static const Map<String, String> firebase_auth_errors = {
+  static const Map<String, String> firebaseAuthErrors = {
     "EMAIL_EXISTS": "Já existe um conta utilizando este email",
     "OPERATION_NOT_ALLOWED": "Operação não permitida",
     "TOO_MANY_ATTEMPTS_TRY_LATER":

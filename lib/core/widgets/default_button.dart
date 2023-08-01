@@ -32,16 +32,6 @@ class DefaultButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         onPressed: onPressed,
-        child: richText ??
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: fontSize,
-                fontWeight: FontWeight.bold,
-                color:
-                    revertColor ? ColorsConstants.PRIMARY_COLOR : Colors.white,
-              ),
-            ),
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
@@ -51,8 +41,18 @@ class DefaultButton extends StatelessWidget {
           ),
           backgroundColor: revertColor
               ? Colors.white
-              : color ?? ColorsConstants.PRIMARY_COLOR,
+              : color ?? ColorsConstants.primaryColor,
         ),
+        child: richText ??
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color:
+                    revertColor ? ColorsConstants.primaryColor : Colors.white,
+              ),
+            ),
       ),
     );
   }
