@@ -90,11 +90,11 @@ It is coincidence? jaja!!
 The following images are from the authentication and splash features:
 </p>
 
-<p align="middle">
-<img alt="Splash View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/f6b00ee6-68bf-46b3-a8e8-5713569f71af" width="250"/>
-<img alt="Login View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/6b2139f9-68de-4da0-bda3-072303402490" width="250"/>
-<img alt="Register View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/30f329cb-67f9-4974-9dae-85cbd9a0bf45" width="250"/>
-<img alt="Reset Password View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/204f9aa8-7505-4c99-816f-210db827779a" width="250"/>
+<p align="middle">          
+<img alt="Splash View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/f6b00ee6-68bf-46b3-a8e8-5713569f71af" width="200"/>
+<img alt="Login View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/6b2139f9-68de-4da0-bda3-072303402490" width="200"/>
+<img alt="Register View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/a1f07ea1-8e9a-400b-ace0-888930b8c317" width="200"/>
+<img alt="Reset Password View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/077bd8d1-eb74-4d3e-8a08-37da21ea1744" width="200"/>
 </p>
 
 ## ✦ Usage
