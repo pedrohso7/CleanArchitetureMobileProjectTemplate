@@ -91,9 +91,10 @@ The following images are from the authentication and splash features:
 </p>
 
 <p align="middle">
-<img alt="Splash View" title="App" src="lib/assets/images/readme/splash_page.png" width="250"/>
-<img alt="Login View" title="App" src="lib/assets/images/readme/login_page.png" width="250"/>
-<img alt="Register View" title="App" src="lib/assets/images/readme/register_page.png" width="250"/>
+<img alt="Splash View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/f6b00ee6-68bf-46b3-a8e8-5713569f71af" width="250"/>
+<img alt="Login View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/6b2139f9-68de-4da0-bda3-072303402490" width="250"/>
+<img alt="Register View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/30f329cb-67f9-4974-9dae-85cbd9a0bf45" width="250"/>
+<img alt="Reset Password View" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/204f9aa8-7505-4c99-816f-210db827779a" width="250"/>
 </p>
 
 ## ✦ Usage
