@@ -74,11 +74,12 @@ class LoginPageView extends GetView<LoginController> {
                     TextButton(
                       onPressed: () => Get.toNamed('/auth/retrieve-account'),
                       child: Text(
-                        'Esqueceu sua senha?',
+                        'Esqueceu a senha?',
                         style: TextStyle(
-                          color: context.theme.primaryColor,
+                          color: context.theme.primaryColor.withOpacity(0.75),
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
                         ),
                         textScaleFactor: 1,
                       ),
@@ -89,9 +90,9 @@ class LoginPageView extends GetView<LoginController> {
             ),
             Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Expanded(
                       child: Divider(
                         thickness: 1,
