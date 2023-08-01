@@ -48,6 +48,19 @@ class AuthRepository implements AuthRepositoryInterface {
   }
 
   @override
+  Future<Either<RemoteClientException, Response>> sendResetPasswordEmail({
+    required String email,
+  }) async {
+    try {
+      return Right(await remoteDataSource.sendResetPasswordEmail(
+        email: email,
+      ));
+    } on RemoteClientException catch (e) {
+      return Left(RemoteClientException(e.message, code: e.code));
+    }
+  }
+
+  @override
   Either<LocalStorageException, void> writeUserOnLocalStorage(
       {required Map user}) {
     try {

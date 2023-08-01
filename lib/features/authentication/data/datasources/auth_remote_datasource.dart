@@ -14,6 +14,9 @@ abstract class AuthRemoteDataSourceInterface {
     required String email,
     required String password,
   });
+  Future<Response> sendResetPasswordEmail({
+    required String email,
+  });
 }
 
 class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
@@ -56,6 +59,31 @@ class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
         'email': email,
         'password': password,
         'returnSecureToken': true,
+      },
+      query: {
+        'key': dotenv.env['FIREBASE_WEB_KEY'],
+      },
+    );
+
+    if (result.hasError) {
+      throw RemoteClientException(
+        '${AuthErrors.firebase_auth_errors[result.body['error']['message']]}',
+        code: result.statusCode,
+      );
+    }
+
+    return result;
+  }
+
+  @override
+  Future<Response> sendResetPasswordEmail({
+    required String email,
+  }) async {
+    final Response result = await authClient.post(
+      '/accounts:sendOobCode',
+      {
+        'requestType': "PASSWORD_RESET",
+        'email': email,
       },
       query: {
         'key': dotenv.env['FIREBASE_WEB_KEY'],

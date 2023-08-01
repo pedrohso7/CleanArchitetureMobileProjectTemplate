@@ -13,6 +13,9 @@ abstract class AuthRepositoryInterface {
     required String email,
     required String password,
   });
+  Future<Either<RemoteClientException, Response>> sendResetPasswordEmail({
+    required String email,
+  });
   Either<LocalStorageException, void> writeUserOnLocalStorage(
       {required Map user});
   Either<LocalStorageException, void> writeStringOnLocalStorage(
