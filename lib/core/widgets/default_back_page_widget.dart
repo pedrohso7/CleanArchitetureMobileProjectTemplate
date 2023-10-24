@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+import '../constants/theme/colors.dart';
+import '../constants/theme/sizes.dart';
+import '../constants/theme/text_style.dart';
 
 class DefaultBackPageWidget extends StatelessWidget {
   final String title;
@@ -14,21 +17,19 @@ class DefaultBackPageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 35,
-        vertical: 20,
+        vertical: AppSizes.s16,
       ),
       child: Row(
         children: [
           Expanded(
             flex: 2,
             child: InkWell(
-              // radius: 32,
               borderRadius: BorderRadius.circular(50),
               onTap: onTap,
-              child: Icon(
-                MdiIcons.chevronLeft,
+              child: const Icon(
+                Icons.chevron_left,
                 color: Colors.black54,
-                size: 45,
+                size: AppSizes.s40,
               ),
             ),
           ),
@@ -37,16 +38,12 @@ class DefaultBackPageWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Transform.translate(
-                  offset: const Offset(-20, 0),
-                  child: Text(
-                    title,
-                    style: const TextStyle(
-                      color: Colors.black54,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // textAlign: TextAlign.center,
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: AppFontSizes.s20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],

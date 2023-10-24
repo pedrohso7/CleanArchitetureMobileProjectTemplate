@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get_utils/get_utils.dart';
+
+import '../constants/theme/colors.dart';
+import '../constants/theme/sizes.dart';
 
 class DefaultTextInput extends StatelessWidget {
-  final Text? label;
+  final String label;
   final EdgeInsets contentPadding;
   final Color borderColor;
   final Color fillColor;
@@ -25,11 +27,11 @@ class DefaultTextInput extends StatelessWidget {
 
   const DefaultTextInput({
     Key? key,
-    this.label,
-    this.contentPadding = const EdgeInsets.symmetric(vertical: 0.0),
+    required this.label,
+    this.contentPadding = const EdgeInsets.symmetric(vertical: AppSizes.s8),
     this.borderColor = Colors.transparent,
     this.fillColor = Colors.white,
-    this.radius = 25.0,
+    this.radius = AppSizes.s24,
     this.icon,
     this.controller,
     this.suffixWidget,
@@ -59,29 +61,45 @@ class DefaultTextInput extends StatelessWidget {
       keyboardType: keyboardType,
       validator: validator,
       controller: controller,
-      cursorColor: context.theme.primaryColor,
+      cursorColor: AppColors.primaryColor,
       inputFormatters: inputFormatters,
       textCapitalization: textCapitalization,
       decoration: InputDecoration(
         prefixIcon: icon != null
             ? Transform.translate(
-                offset: const Offset(5, 0),
+                offset: const Offset(AppSizes.s4, 0),
                 child: icon,
               )
             : icon,
         suffixIcon: suffixWidget != null
             ? Transform.translate(
-                offset: const Offset(-5, 0),
+                offset: const Offset(-AppSizes.s4, 0),
                 child: suffixWidget,
               )
             : suffixWidget,
         isDense: true,
         label: icon != null
             ? Transform.translate(
-                offset: const Offset(5, 0),
-                child: label,
+                offset: const Offset(AppSizes.s4, 0),
+                child: Text(
+                  label,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textScaleFactor: 1,
+                ),
               )
-            : label,
+            : Text(
+                label,
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+                textScaleFactor: 1,
+              ),
         contentPadding: contentPadding,
         errorStyle: const TextStyle(
           color: Colors.redAccent,

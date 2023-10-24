@@ -1,63 +1,49 @@
-import 'package:clean_architeture_project/core/bindings/app_bindings.dart';
-import 'package:clean_architeture_project/core/routes/auth_routes.dart';
-import 'package:clean_architeture_project/core/routes/home_routes.dart';
-import 'package:clean_architeture_project/core/routes/splash_routes.dart';
-import 'package:clean_architeture_project/core/themes/default_theme.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:get/get.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get_storage/get_storage.dart';
+import 'app/app_module.dart';
+import 'app/auth/presenter/login/bloc/login_bloc.dart';
+import 'app/auth/presenter/register/bloc/register_bloc.dart';
+import 'app/auth/presenter/retrieve_account/bloc/retrieve_account_bloc.dart';
+import 'app/home/presenter/bloc/home_bloc.dart';
+import 'core/constants/routes/routes.dart';
+import 'core/mixins/user_decode_mixin.dart';
 
 void main() async {
-  //Bindinds
-  WidgetsFlutterBinding.ensureInitialized();
-
-  //Device Orientation
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
-
-  //Envinronment
   await dotenv.load(fileName: ".env");
 
-  //Local Storage
   await GetStorage.init();
 
-  //Execute
-  runApp(const CleanArchApp());
-
-  //Initialize firebase services
-  await Firebase.initializeApp();
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      child: const MyApp(),
+    ),
+  );
 }
 
-class CleanArchApp extends StatelessWidget {
-  const CleanArchApp({Key? key}) : super(key: key);
-
+class MyApp extends StatelessWidget with UserDecodeMixin {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'AnswerMe',
-      debugShowCheckedModeBanner: false,
-      theme: DefaultTheme.theme,
-      initialBinding: AppBindings(),
-      initialRoute: '/splash',
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
+    Modular.setInitialRoute(
+      checkIsUserLogged() ? AppRoutesPaths.homePath : AppRoutesPaths.loginPath,
+    );
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => Modular.get<LoginBloc>()),
+        BlocProvider(create: (context) => Modular.get<RegisterBloc>()),
+        BlocProvider(create: (context) => Modular.get<RetrieveAccountBloc>()),
+        BlocProvider(create: (context) => Modular.get<HomeBloc>()),
       ],
-      supportedLocales: const [
-        Locale('pt', 'BR'),
-      ],
-      getPages: [
-        ...SplashRoutes.routers,
-        ...HomeRoutes.routers,
-        ...AuthRoutes.routers,
-      ],
+      child: MaterialApp.router(
+        builder: EasyLoading.init(),
+        title: 'Translator-IA',
+        routerConfig: Modular.routerConfig,
+      ),
     );
   }
 }

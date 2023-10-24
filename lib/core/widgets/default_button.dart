@@ -1,28 +1,27 @@
-import 'package:clean_architeture_project/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
+
+import '../constants/theme/colors.dart';
+import '../constants/theme/sizes.dart';
+import '../constants/theme/text_style.dart';
 
 class DefaultButton extends StatelessWidget {
   final VoidCallback? onPressed;
+  final bool isSecondaryStyle;
   final String label;
   final double? width;
   final double height;
-  final Color? color;
-  final double fontSize;
   final double borderRadius;
-  final bool revertColor;
-  final Widget? richText;
+  final Widget? child;
 
   const DefaultButton({
     Key? key,
     required this.onPressed,
+    this.isSecondaryStyle = false,
     this.label = '',
     this.width,
-    this.height = 50,
-    this.color,
-    this.borderRadius = 5,
-    this.fontSize = 14,
-    this.revertColor = false,
-    this.richText,
+    this.height = AppSizes.s56,
+    this.borderRadius = AppSizes.s4,
+    this.child,
   }) : super(key: key);
 
   @override
@@ -35,23 +34,17 @@ class DefaultButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
-            side: revertColor
-                ? BorderSide(color: color ?? const Color(0xFF016EA7))
-                : BorderSide.none,
           ),
-          backgroundColor: revertColor
-              ? Colors.white
-              : color ?? ColorsConstants.primaryColor,
+          backgroundColor:
+              isSecondaryStyle ? AppColors.transparent : AppColors.primaryColor,
+          elevation: isSecondaryStyle ? 0 : null,
         ),
-        child: richText ??
+        child: child ??
             Text(
               label,
-              style: TextStyle(
-                fontSize: fontSize,
-                fontWeight: FontWeight.bold,
-                color:
-                    revertColor ? ColorsConstants.primaryColor : Colors.white,
-              ),
+              style: isSecondaryStyle
+                  ? AppTextStyles.defaultYellowText
+                  : AppTextStyles.defaultText,
             ),
       ),
     );

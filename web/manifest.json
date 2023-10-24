@@ -1,6 +1,6 @@
 {
-    "name": "clean_architeture_project",
-    "short_name": "clean_architeture_project",
+    "name": "translator_ia",
+    "short_name": "translator_ia",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
