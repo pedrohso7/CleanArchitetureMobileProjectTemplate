@@ -53,7 +53,7 @@ The above diagram explain how each elements are related and demonstrate the call
 The presenter separation makes the UI code more maintainable and testable because it removes the Business Logic from the UI behaviour, avoiding coupled code's.
 </p></br>
 
-<p align="justify
+<p align="justify>
 The project presentation layer's are divided in bloc, stateless widget's and the presenter orchestror file, a stateful widget that can uses native Flutter lifecycle and handles all other organisms:
 </p>
 
@@ -103,7 +103,7 @@ Besides the features, I created a core path that contains all shared components 
 </p>
 
 <p align="middle">
-<img alt="Core folder" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/4f5b6351-c3be-4824-9d4b-f9f3042fdaee" width="385"/>
+<img alt="Core folder" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/91522a1c-91f6-44d2-9e75-ac839f1d3ddd" width="450"/>
 </p>
 
 <h4>Dependency Injection</h4>
@@ -117,7 +117,7 @@ Is it coincidence?
 </p>
 
 <p align="middle">
-<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/1e60c5f1-e4dc-47ad-8b59-f819f5c92ba8" width="200"/>
+<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/1e60c5f1-e4dc-47ad-8b59-f819f5c92ba8" width="400"/>
 </p>
 
 <h4>Home feature injection example</h4>
