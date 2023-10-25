@@ -27,10 +27,10 @@ This project was made using the tecnologies below:
 - [Flutter](https://flutter.dev/)
 - [Dart](https://dart.dev/)
 - [Flutter Modular](https://pub.dev/packages/flutter_modular) to dependency injection and routing. This package allows us to use a smart and modularized Structure to inject depencies and define routes. This way we improove understanding of features, faces less breaking changes and improve reuse.
-- [BLoC](https://pub.dev/packages/get) to the page's state management. BLoC allows for a clear separation between the UI components and the business logic and this helps to organize code and making it more maintainable and testable.
+- [Flutter BLoC](https://pub.dev/packages/flutter_bloc) to the page's state management. BLoC allows for a clear separation between the UI components and the business logic and this helps to organize code and making it more maintainable and testable.
 - [Mockito](https://pub.dev/packages/mockito) as the Mock support to our tests.
 - [Flutter Tests](https://api.flutter.dev/flutter/flutter_test/flutter_test-library.html) the native option to make app unit tests.
-- [Get_Storage](https://pub.dev/packages/mockito) as our local storage.
+- [Get_Storage](https://pub.dev/packages/get_storage) as our local storage.
 
 ## ✦ Overview
 <p align="justify">
