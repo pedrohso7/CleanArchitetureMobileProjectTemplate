@@ -110,7 +110,7 @@ Besides the features, I created a core path that contains all shared components 
 <h4>Dependency Injection</h4>
 
 <p align="justify">
-The dependency injection follows the diagram on the beggining of this document, in other words, datasources are injected on repositories, repositories are injected on usecases and usecases are injected on the presentation controller. Modular made it easy, fortunately.
+The dependency injection follows the diagram on the beggining of this document, in other words, datasources are injected on repositories, repositories are injected on usecases and usecases are injected on the presentation. Modular made it easy, fortunately.
 </p>
 
 <p align="justify">
@@ -118,7 +118,7 @@ Is it coincidence?
 </p>
 
 <p align="middle">
-<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/f0b27280-2fa7-4a18-9c42-060fed7a070e" width="400"/>
+<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/f0b27280-2fa7-4a18-9c42-060fed7a070e" width="350"/>
 </p>
 
 <h2>Home feature injection example</h2>
