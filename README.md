@@ -118,7 +118,7 @@ Is it coincidence?
 </p>
 
 <p align="middle">
-<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/1d33ffc9-8790-405d-8982-a3fee665b5d1" width="400"/>
+<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/f0b27280-2fa7-4a18-9c42-060fed7a070e" width="400"/>
 </p>
 
 <h2>Home feature injection example</h2>
