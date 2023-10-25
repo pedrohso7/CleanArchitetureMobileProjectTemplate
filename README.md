@@ -77,9 +77,9 @@ Under the presentation layer on stack flow we've the domain layer. This layer ba
 
 The related folders are used to:
 <ul>
-<li>**usecases**: Contains the application-specific business rules or use cases. These use cases represent the actions that can be performed within the application.</li>
-<li>**protocols**: Includes the interfaces or abstract classes that define the methods for data operations. These interfaces are implemented in the data layer, in repositories.</li>
-<li>**entities**: Holds the core data models or entities that represent the business objects and data structures used within the feature</li>
+<li>__usecases__: Contains the application-specific business rules or use cases. These use cases represent the actions that can be performed within the application.</li>
+<li>__protocols__: Includes the interfaces or abstract classes that define the methods for data operations. These interfaces are implemented in the data layer, in repositories.</li>
+<li>__entities__: Holds the core data models or entities that represent the business objects and data structures used within the feature</li>
 </ul>
 
 <h4>Data</h4>
@@ -92,9 +92,9 @@ This layer deals with data handling, including data sources, repositories, model
 
 The data folders are:
 <ul>
-<li>**datasources**: Contains classes responsible for interacting with remote data sources such as APIs or web services.</li>
-<li>**repositories**: Implements the interfaces defined in the domain layer. These concrete implementations handle data operations and serve as the bridge between the domain layer and external data sources.</li>
-<li>**models**: Holds the data models (derived from domain entities) that represent the data structures used for data manipulation within the application</li>
+<li>__datasources__: Contains classes responsible for interacting with remote data sources such as APIs or web services.</li>
+<li>__repositories__: Implements the interfaces defined in the domain layer. These concrete implementations handle data operations and serve as the bridge between the domain layer and external data sources.</li>
+<li>__models__: Holds the data models (derived from domain entities) that represent the data structures used for data manipulation within the application</li>
 </ul>
 
 <h4>Core</h4>
