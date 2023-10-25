@@ -51,17 +51,17 @@ The auth feature will be This project can be a good start to make your own app. 
 The above diagram explain how each elements are related and demonstrate the call stack flow. Anyway, in the top of the flow, we have the presentation layer. It includes the UI components such as widgets, pages and presenters. Futhermore, the layer is responsible for rendering the user interface and handle user actions.
 
 The presenter separation makes the UI code more maintainable and testable because it removes the Business Logic from the UI behaviour, avoiding coupled code's.
-</p></br>
+</p>
 
 <p align="justify>
 The project presentation layer's are divided in bloc, stateless widget's and the presenter orchestror file, a stateful widget that can uses native Flutter lifecycle and handles all other organisms:
 </p>
 
 <p align="middle">
-<img alt="Presentation structure" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/a89586fc-76b3-41c4-a2fc-adf6b40f7b96" width="385"/>
+          <img alt="Presentation structure" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/a89586fc-76b3-41c4-a2fc-adf6b40f7b96" width="385"/>
 </p>
 
-<p align="justify
+<p align="justify>
 Each feature presentation folder define their own bloc folder. It defines the state variations, action types and the action's handling. The screens and widgets folders provides the stateless widgets available for feature and the "presenter" file is the orchestror.
 </p>
 
@@ -77,9 +77,9 @@ Under the presentation layer on stack flow we've the domain layer. This layer ba
 
 The related folders are used to:
 <ul>
-<li><br>usecases</br>: Contains the application-specific business rules or use cases. These use cases represent the actions that can be performed within the application.</li>
-<li><br>protocols</br>: Includes the interfaces or abstract classes that define the methods for data operations. These interfaces are implemented in the data layer, in repositories.</li>
-<li><br>entities</br>: Holds the core data models or entities that represent the business objects and data structures used within the feature</li>
+<li>usecases: Contains the application-specific business rules or use cases. These use cases represent the actions that can be performed within the application.</li>
+<li>protocols: Includes the interfaces or abstract classes that define the methods for data operations. These interfaces are implemented in the data layer, in repositories.</li>
+<li>entities: Holds the core data models or entities that represent the business objects and data structures used within the feature</li>
 </ul>
 
 <h4>Data</h4>
@@ -123,7 +123,7 @@ Is it coincidence?
 <h4>Home feature injection example</h4>
 
 <p align="middle">
-<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/8d3aa447-3764-456a-86d0-a1dd2e093099" width="200"/>
+<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/8d3aa447-3764-456a-86d0-a1dd2e093099" width="500"/>
 </p>
 
 <p align="justify">
@@ -132,7 +132,7 @@ You can implement as dependency just the what you feature needs. Modular will fa
 
 ## ✦ Implemented Views
 <p align="justify">
-The following images are from the authentication and splash features (Home isn't listed because is just a simple page structure and will be replaced on other projects):
+The following images are from the authentication features (Home isn't listed because is just a simple page structure and will be replaced on other projects):
 </p>
 
 <p align="middle">          
