@@ -31,10 +31,19 @@ This project was made using the tecnologies below:
 - [Mockito](https://pub.dev/packages/mockito) as the Mock support to our tests.
 - [Flutter Tests](https://api.flutter.dev/flutter/flutter_test/flutter_test-library.html) the native option to make app unit tests.
 - [Get_Storage](https://pub.dev/packages/get_storage) as our local storage.
+- [Firebase](https://firebase.google.com/docs/reference/rest/auth) Rest API to authentication because we will not need to add any dependency.
 
 ## ✦ Overview
 <p align="justify">
-This project can be a good start to make your own app. The following content explains how this it was structured.
+This project can be a good start to make your own app. The lib folder comports all our functionalities, being divided in core folder (common resources) and app folder (our features):
+</p>
+
+<p align="middle">
+<img alt="App content" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/cc383d43-77dc-41be-8a17-48b72d526777" width="200"/>
+</p>
+
+<p align="justify">
+The following content explains how each feature was structured.
 </p>
 
 <p align="middle">
@@ -42,13 +51,13 @@ This project can be a good start to make your own app. The following content exp
 </p>
 
 <p align="justify">
-The auth feature will be This project can be a good start to make your own app. The following content explains how this it was structured.used as example along this explanation.
+The auth feature will be used as example across this explanation.
 </p>
 
 <h4>Presentation</h4>
 
 <p align="justify">
-The above diagram explain how each elements are related and demonstrate the call stack flow. Anyway, in the top of the flow, we have the presentation layer. It includes the UI components such as widgets, pages and presenters. Futhermore, the layer is responsible for rendering the user interface and handle user actions.
+In top of flow, we have the presentation layer. It includes the UI components such as widgets, pages and presenters. Futhermore, the layer is responsible for rendering the user interface and handle user actions.
 
 The presenter separation makes the UI code more maintainable and testable because it removes the Business Logic from the UI behaviour, avoiding coupled code's.
 </p>
