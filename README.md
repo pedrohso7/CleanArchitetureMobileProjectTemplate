@@ -19,7 +19,7 @@
 
 ## ✦ Project
 <p align="justify">
-This repository was created to be a mobile project that uses the [Reso Coder's Flutter Clean Architecture Proposal™](https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/) using the current most popular technologies and approach's to make an project with a built-in authentication features made using good practices as clean code, SOLID and conventional commits. This project must be the base for my future projects.
+This repository was created to be a mobile project that uses the <a href="https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure">Reso Coder's Flutter Clean Architecture Proposal™</a> using the current most popular technologies and approach's to make an project with a built-in authentication features made using good practices as clean code, SOLID and conventional commits. This project must be the base for my future projects.
 </p>
 
 ## ✦ Technologies
@@ -118,7 +118,7 @@ Is it coincidence?
 </p>
 
 <p align="middle">
-<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/7a45d562-846b-4f87-9b37-b6a149c72dbd" width="400"/>
+<img alt="Auth feature injection" title="App" src="https://github.com/pedrohso7/CleanArchitetureMobileProjectTemplate/assets/32853995/1d33ffc9-8790-405d-8982-a3fee665b5d1" width="400"/>
 </p>
 
 <h2>Home feature injection example</h2>
