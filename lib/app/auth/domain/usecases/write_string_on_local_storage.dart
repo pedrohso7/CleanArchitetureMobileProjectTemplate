@@ -1,11 +1,10 @@
-import 'package:flutter_modular/flutter_modular.dart';
-
 import '../../../../core/result/result.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../protocols/auth_protocols.dart';
 
 class WriteStringOnLocalStorage implements UseCase<void, WSOLSParams> {
-  final AuthProtocols authRepository = Modular.get<AuthProtocols>();
+  final AuthProtocols authRepository;
+  const WriteStringOnLocalStorage(this.authRepository);
 
   @override
   Future<void> call(WSOLSParams params) async {

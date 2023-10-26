@@ -1,12 +1,11 @@
-import 'package:flutter_modular/flutter_modular.dart';
-
 import '../../../../core/result/result.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../entities/user.dart';
 import '../protocols/auth_protocols.dart';
 
 class Register implements UseCase<Future<User>, RegisterParams> {
-  final AuthProtocols authRepository = Modular.get<AuthProtocols>();
+  final AuthProtocols authRepository;
+  const Register(this.authRepository);
 
   @override
   Future<User> call(RegisterParams params) async {

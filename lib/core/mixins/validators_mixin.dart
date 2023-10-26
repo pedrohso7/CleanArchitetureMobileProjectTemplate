@@ -1,7 +1,9 @@
+import '../constants/errors/validators_errors.dart';
+
 mixin ValidatorsMixin {
-  String? requiredValidator(String val) {
-    if (val.isEmpty) {
-      return 'Campo obrigatório.';
+  String? requiredValidator(String? val) {
+    if (val == null || val.isEmpty) {
+      return ValidatorsErrors.emptyField.message;
     }
     return null;
   }
@@ -13,22 +15,22 @@ mixin ValidatorsMixin {
     return regExp.hasMatch(email);
   }
 
-  String? emailValidator(String val) {
-    if (val.isEmpty) {
-      return 'Campo obrigatório.';
+  String? emailValidator(String? val) {
+    if (val == null || val.isEmpty) {
+      return ValidatorsErrors.emptyField.message;
     }
     if (!(_isEmailValid(val))) {
-      return 'Email inválido.';
+      return ValidatorsErrors.invalidEmail.message;
     }
     return null;
   }
 
-  String? passwordConfirmationValidator(String val, password) {
-    if (val.isEmpty) {
-      return 'Campo obrigatório.';
+  String? passwordConfirmationValidator(String? val, password) {
+    if (val == null || val.isEmpty) {
+      return ValidatorsErrors.emptyField.message;
     }
     if (password != val) {
-      return 'Senhas diferem.';
+      return ValidatorsErrors.passwordsAreNotEqual.message;
     }
     return null;
   }

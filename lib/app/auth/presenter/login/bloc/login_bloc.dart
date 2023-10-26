@@ -15,12 +15,15 @@ part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> with EasyLoadingMixin {
   static LoginBloc get(context) => BlocProvider.of(context);
-  final Login _loginUseCase = Modular.get<Login>();
-  final WriteStringOnLocalStorage _writeStringOnLocalStorageUseCase =
-      Modular.get<WriteStringOnLocalStorage>();
-  final WriteUserOnLocalStorage _writeUserOnLocalStorageUseCase =
-      Modular.get<WriteUserOnLocalStorage>();
-  LoginBloc() : super(const LoginDefault(false, false)) {
+  final Login _loginUseCase;
+  final WriteStringOnLocalStorage _writeStringOnLocalStorageUseCase;
+  final WriteUserOnLocalStorage _writeUserOnLocalStorageUseCase;
+
+  LoginBloc(
+    this._loginUseCase,
+    this._writeStringOnLocalStorageUseCase,
+    this._writeUserOnLocalStorageUseCase,
+  ) : super(const LoginDefault(false, false)) {
     on<LoginEvent>((event, emit) async {
       if (event is LoginRequestEvent) {
         _handleLoginEvent(event, emit);

@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'data/datasources/home_local_datasource.dart';
 import 'data/repositories/home_repository.dart';
@@ -13,22 +14,30 @@ class HomeModule extends Module {
   void binds(i) {
     //Data Sources
     i.addLazySingleton<HomeLocalDataSourceInterface>(
-      () => HomeLocalDataSource(),
+      () => HomeLocalDataSource(
+        Modular.get<GetStorage>(),
+      ),
     );
 
     //Repositories
     i.addLazySingleton<HomeProtocols>(
-      () => HomeRepository(),
+      () => HomeRepository(
+        Modular.get<HomeLocalDataSourceInterface>(),
+      ),
     );
 
     //UseCases
     i.addLazySingleton(
-      () => RemoveAuthCachedData(),
+      () => RemoveAuthCachedData(
+        Modular.get<HomeProtocols>(),
+      ),
     );
 
     //BLoC's
     i.addLazySingleton(
-      () => HomeBloc(),
+      () => HomeBloc(
+        Modular.get<RemoveAuthCachedData>(),
+      ),
     );
   }
 

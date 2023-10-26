@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../../core/errors/remote_client_exception.dart';
 import '../../../../../core/mixins/easy_loading_mixin.dart';
@@ -13,9 +12,10 @@ class RetrieveAccountBloc
     extends Bloc<RetrieveAccountEvent, RetrieveAccountState>
     with EasyLoadingMixin {
   static RetrieveAccountBloc get(context) => BlocProvider.of(context);
-  final SendResetPasswordEmail _sendResetPasswordEmailUseCase =
-      Modular.get<SendResetPasswordEmail>();
-  RetrieveAccountBloc() : super(const RetrieveAccountDefault()) {
+  final SendResetPasswordEmail _sendResetPasswordEmailUseCase;
+
+  RetrieveAccountBloc(this._sendResetPasswordEmailUseCase)
+      : super(const RetrieveAccountDefault()) {
     on<RetrieveAccountEvent>((event, emit) async {
       if (event is RetrieveAccountRequestEvent) {
         _handleRetrieveAccountEvent(event, emit);
