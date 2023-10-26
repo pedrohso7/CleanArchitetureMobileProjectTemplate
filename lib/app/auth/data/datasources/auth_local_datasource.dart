@@ -1,4 +1,3 @@
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../../../core/errors/local_storage_exception.dart';
@@ -9,9 +8,9 @@ abstract class AuthLocalDataSourceInterface {
 }
 
 class AuthLocalDataSource implements AuthLocalDataSourceInterface {
-  final GetStorage getStorage = Modular.get<GetStorage>();
+  final GetStorage getStorage;
 
-  AuthLocalDataSource();
+  AuthLocalDataSource(this.getStorage);
 
   @override
   void writeUserOnLocalStorage(Map user) {

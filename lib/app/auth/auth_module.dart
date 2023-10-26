@@ -1,5 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get_storage/get_storage.dart';
 import '../../core/constants/routes/routes.dart';
+import '../../core/platform/firebase_client.dart';
 import 'data/datasources/auth_local_datasource.dart';
 import 'data/datasources/auth_remote_datasource.dart';
 import 'data/repositories/auth_repository.dart';
@@ -22,43 +24,56 @@ class AuthModule extends Module {
   void binds(i) {
     //Data Sources
     i.addLazySingleton<AuthLocalDataSourceInterface>(
-      () => AuthLocalDataSource(),
+      () => AuthLocalDataSource(Modular.get<GetStorage>()),
     );
     i.addLazySingleton<AuthRemoteDataSourceInterface>(
-      () => AuthRemoteDataSource(),
+      () => AuthRemoteDataSource(Modular.get<IFirebaseClient>()),
     );
 
     //Repositories
     i.addLazySingleton<AuthProtocols>(
-      () => AuthRepository(),
+      () => AuthRepository(
+        Modular.get<AuthRemoteDataSourceInterface>(),
+        Modular.get<AuthLocalDataSourceInterface>(),
+      ),
     );
 
     //UseCases
     i.addLazySingleton(
-      () => Login(),
+      () => Login(Modular.get<AuthProtocols>()),
     );
     i.addLazySingleton(
-      () => Register(),
+      () => Register(Modular.get<AuthProtocols>()),
     );
     i.addLazySingleton(
-      () => SendResetPasswordEmail(),
+      () => SendResetPasswordEmail(Modular.get<AuthProtocols>()),
     );
     i.addLazySingleton(
-      () => WriteStringOnLocalStorage(),
+      () => WriteStringOnLocalStorage(Modular.get<AuthProtocols>()),
     );
     i.addLazySingleton(
-      () => WriteUserOnLocalStorage(),
+      () => WriteUserOnLocalStorage(Modular.get<AuthProtocols>()),
     );
 
     //BLoC's
     i.addLazySingleton(
-      () => LoginBloc(),
+      () => LoginBloc(
+        Modular.get<Login>(),
+        Modular.get<WriteStringOnLocalStorage>(),
+        Modular.get<WriteUserOnLocalStorage>(),
+      ),
     );
     i.addLazySingleton(
-      () => RegisterBloc(),
+      () => RegisterBloc(
+        Modular.get<Register>(),
+        Modular.get<WriteStringOnLocalStorage>(),
+        Modular.get<WriteUserOnLocalStorage>(),
+      ),
     );
     i.addLazySingleton(
-      () => RetrieveAccountBloc(),
+      () => RetrieveAccountBloc(
+        Modular.get<SendResetPasswordEmail>(),
+      ),
     );
   }
 

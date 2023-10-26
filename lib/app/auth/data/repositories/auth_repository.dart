@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../core/constants/errors/firebase_auth_errors.dart';
 import '../../../../core/errors/local_storage_exception.dart';
@@ -11,10 +10,10 @@ import '../datasources/auth_local_datasource.dart';
 import '../datasources/auth_remote_datasource.dart';
 
 class AuthRepository implements AuthProtocols {
-  final AuthRemoteDataSourceInterface remoteDataSource =
-      Modular.get<AuthRemoteDataSourceInterface>();
-  final AuthLocalDataSourceInterface localDataSource =
-      Modular.get<AuthLocalDataSourceInterface>();
+  final AuthRemoteDataSourceInterface remoteDataSource;
+  final AuthLocalDataSourceInterface localDataSource;
+
+  AuthRepository(this.remoteDataSource, this.localDataSource);
 
   @override
   Future<IResult<User>> register({

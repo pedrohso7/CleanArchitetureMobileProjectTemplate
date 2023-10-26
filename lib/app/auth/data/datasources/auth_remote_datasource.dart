@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../core/platform/firebase_client.dart';
 import '../../domain/entities/user.dart';
@@ -22,7 +21,8 @@ abstract class AuthRemoteDataSourceInterface {
 }
 
 class AuthRemoteDataSource implements AuthRemoteDataSourceInterface {
-  final IFirebaseClient authClient = Modular.get<IFirebaseClient>();
+  final IFirebaseClient authClient;
+  const AuthRemoteDataSource(this.authClient);
 
   @override
   Future<User> register({

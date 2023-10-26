@@ -16,12 +16,16 @@ part 'register_state.dart';
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState>
     with EasyLoadingMixin {
   static RegisterBloc get(context) => BlocProvider.of(context);
-  final Register _registerUseCase = Modular.get<Register>();
-  final WriteStringOnLocalStorage _writeStringOnLocalStorageUseCase =
-      Modular.get<WriteStringOnLocalStorage>();
-  final WriteUserOnLocalStorage _writeUserOnLocalStorageUseCase =
-      Modular.get<WriteUserOnLocalStorage>();
-  RegisterBloc() : super(const RegisterDefault()) {
+
+  final Register _registerUseCase;
+  final WriteStringOnLocalStorage _writeStringOnLocalStorageUseCase;
+  final WriteUserOnLocalStorage _writeUserOnLocalStorageUseCase;
+
+  RegisterBloc(
+    this._registerUseCase,
+    this._writeStringOnLocalStorageUseCase,
+    this._writeUserOnLocalStorageUseCase,
+  ) : super(const RegisterDefault()) {
     on<RegisterEvent>((event, emit) async {
       if (event is RegisterRequestEvent) {
         _handleRegisterEvent(event, emit);
