@@ -1,4 +1,3 @@
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../../../core/errors/local_storage_exception.dart';
@@ -8,7 +7,8 @@ abstract class HomeLocalDataSourceInterface {
 }
 
 class HomeLocalDataSource implements HomeLocalDataSourceInterface {
-  final GetStorage getStorage = Modular.get<GetStorage>();
+  final GetStorage getStorage;
+  const HomeLocalDataSource(this.getStorage);
 
   @override
   void removeAuthCachedData() {

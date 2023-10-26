@@ -11,9 +11,8 @@ part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   static HomeBloc get(context) => BlocProvider.of(context);
-  final RemoveAuthCachedData _removeAuthCachedData =
-      Modular.get<RemoveAuthCachedData>();
-  HomeBloc() : super(HomeDefault()) {
+  final RemoveAuthCachedData _removeAuthCachedData;
+  HomeBloc(this._removeAuthCachedData) : super(HomeDefault()) {
     on<HomeEvent>((event, emit) async {
       if (event is LogoutEvent) {
         _handleLogoutEvent(emit);
