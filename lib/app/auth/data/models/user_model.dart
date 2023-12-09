@@ -3,12 +3,17 @@ import 'dart:convert';
 import '../../domain/entities/user.dart';
 
 class UserModel extends User {
-  UserModel(
+  const UserModel(
     final String localId,
     final String name,
     final String email,
     final Token token,
-  ) : super(localId, name, email, token);
+  ) : super(
+          localId: localId,
+          name: name,
+          email: email,
+          token: token,
+        );
 
   Map<String, dynamic> toMap() {
     return {
@@ -30,7 +35,7 @@ class UserModel extends User {
             map['refreshToken'],
             map['expiresIn'],
           )
-        : TokenModel(
+        : const TokenModel(
             '',
             '',
             '',
@@ -58,11 +63,15 @@ class UserModel extends User {
 }
 
 class TokenModel extends Token {
-  TokenModel(
+  const TokenModel(
     final String idToken,
     final String refreshToken,
     final String expiresIn,
-  ) : super(idToken, refreshToken, expiresIn);
+  ) : super(
+          idToken: idToken,
+          refreshToken: refreshToken,
+          expiresIn: expiresIn,
+        );
 
   Map<String, dynamic> toMap() {
     return {
